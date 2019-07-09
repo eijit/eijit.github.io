@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2016-02-19T00:00:00+09:00</updated><entry><title>バイバイマンを数えてみた</title><link href="/20160219.html" rel="alternate"></link><published>2016-02-19T00:00:00+09:00</published><updated>2016-02-19T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2016-02-19:/20160219.html</id><summary type="html">&lt;p&gt;バイバイマンを数えように挑戦してみた&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://codeiq.jp/q/2593"&gt;バイバイマンを数えよう&lt;/a&gt; に挑戦してみました。コードゴルフは初めてでしたが Python で 51B (&lt;a href="http://d.hatena.ne.jp/Ozy/20160202"&gt;eijit&lt;/a&gt;) と一位までもう少しのところまで行きました。試行錯誤しながら迷走して面白かったので記録を残しておこうと思います。&lt;/p&gt;
+&lt;h1 id="su po naarugorizumu"&gt;素朴なアルゴリズム&lt;/h1&gt;
+&lt;h2 id="wen ti wojie xi suru 1"&gt;問題を解析する 1&lt;/h2&gt;
+&lt;p&gt;バイバイマンの増え方が想像しにくい場合は &lt;a href="http://d.hatena.ne.jp/Ozy/20160131"&gt;バイバイマンの増え方&lt;/a&gt; もあわせてご覧ください。&lt;/p&gt;
+&lt;p&gt;各サイズのバイバイマンの個体数と総数を世代ごとに追うと以下の表のようになります。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;世代&lt;/th&gt;
+&lt;th&gt;c(1, n)&lt;/th&gt;
+&lt;th&gt;c(2, n)&lt;/th&gt;
+&lt;th&gt;c(4, n)&lt;/th&gt;
+&lt;th&gt;c(8, n)&lt;/th&gt;
+&lt;th&gt;c(6, n)&lt;/th&gt;
+&lt;th&gt;s(n)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;ここで&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;c(s, n) はサイズが s で第 n 世代のバイバイマンの個体数&lt;/li&gt;
+&lt;li&gt;s(n) は第 n 世代のバイバイマンの総数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を表します。するとすぐ解るように&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;c(1, n) = c(6, n-1) + c(8, n-1)&lt;/li&gt;
+&lt;li&gt;c(2, n) = c(1, n-1) + c(6, n-1)&lt;/li&gt;
+&lt;li&gt;c(4, n) = c(2, n-1)&lt;/li&gt;
+&lt;li&gt;c(8, n) = c(4, n-1)&lt;/li&gt;
+&lt;li&gt;c(6, n) = c(8, n-1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;と前の世代の一つ小さいサイズの個体数からの移動 (s = 6 は s = 1 に移動したとみなす) と、前の世代のサイズ 8, 6 の分裂からの "繰り上がり" の合計という関係が見えます。&lt;/p&gt;
+&lt;h2 id="[85b] zui chu nokodo"&gt;[85B] 最初のコード&lt;/h2&gt;
+&lt;p&gt;最初はコードゴルフだと気が付かずに 400B 弱のコードを書いて提出してしまったのですがあとから気が付いて短縮してみました。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+ &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+ &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+ &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+ &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで 85B でした。要素の格納に配列を使いました。工夫したのは&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[1,0,0,0,0] より [1]+[0]*4 のほうが 2B 少ない&lt;/li&gt;
+&lt;li&gt;インデントは空白一つ&lt;/li&gt;
+&lt;li&gt;合計を sum で計算する&lt;/li&gt;
+&lt;li&gt;配列を rotate shift した&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;でした。結果を見てまるで歯が立たないことに愕然としてコードゴルフの勉強を始めました。&lt;/p&gt;
+&lt;h2 id="[71b] chu metenowanraina"&gt;[71B] 初めてのワンライナー&lt;/h2&gt;
+&lt;p&gt;ウェブの記事をあちこち見て回って以下のようなことを学びました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ループカウンタを使わないなら exec"コード"*ループ回数 でコードを指定回数繰り返せる&lt;/li&gt;
+&lt;li&gt;if などが入れ子にならないなら改行とインデントを省いてセミコロン ';' で代替できる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"print sum(c);c=c[4:]+c[:4];c[1]+=c[0];c[0]+=c[4];"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで 14B 縮みました。ですがまだ足りません。&lt;/p&gt;
+&lt;h2 id="[67b] pei lie woyameru"&gt;[67B] 配列をやめる&lt;/h2&gt;
+&lt;p&gt;配列の要素にアクセスするコストが高いと気が付いたので a, b, c, d, e といった五つの変数で置き換えてみました。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"print a+b+c+d+e;f=a+d;a=d+e;c=b;d=c;e=d;b=f"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで更に 4B 縮みました。しかし一時変数 f を使っていて無駄です。&lt;/p&gt;
+&lt;h2 id="[64b] yi shi bian shu woshi wazunisuwatsupusuru"&gt;[64B] 一時変数を使わずにスワップする&lt;/h2&gt;
+&lt;p&gt;コードゴルフの勉強をしたときに一時変数を使わずにスワップする話題があったのを思い出しました。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;のような構文です。これを適用して&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"print a+b+c+d+e;a,b,c,d,e=d+e,a+e,b,c,d;"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;更に 3B 縮みました。これで何とかバッヂ獲得圏内に入ったのですがトップは 50B とまだ絶望的な差があります。&lt;/p&gt;
+&lt;h2 id="[62b] gong tong suruji suan womatomeru"&gt;[62B] 共通する計算をまとめる&lt;/h2&gt;
+&lt;p&gt;ここでコードを眺めていて&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;と計算が重複していることに気が付きました。これを利用できないかと考えて&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"a,b,c,d,e=d+e,a+e,b,c,d;print b+c+d+e;"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;と更に 2B 縮みました。ここで&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;print と個体数更新の計算の順序を入れ替える&lt;/li&gt;
+&lt;li&gt;b=a+e を利用して (現世代の) a+b -&amp;gt; (次世代の) b と置き換えても結果は変わらない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ということをしています。&lt;/p&gt;
+&lt;h1 id="zui shi  (dehanakatsuta) arugorizumu_1"&gt;最適 (ではなかった) アルゴリズム&lt;/h1&gt;
+&lt;p&gt;ここまでで、この方針でこれ以上はコードを削れないと思い、基本に立ち返って具体例を眺めて別の規則がないか考えました。&lt;/p&gt;
+&lt;h2 id="wen ti wojie xi suru 2"&gt;問題を解析する 2&lt;/h2&gt;
+&lt;p&gt;すると&lt;/p&gt;
+&lt;p&gt;s(n) = s(n-1) + c(1, n)&lt;/p&gt;
+&lt;p&gt;という規則があるようでした。理由を考えてみれば当たり前の話でした。バイバイマンの個体数が増えるのは、サイズ 8 と 6 が次の世代になってサイズ 16 と 12 になりサイズ 1, 6 とサイズ 1, 2 に分裂した場合です。その際に増えた個体をサイズ 1 のものとみなせばよいわけです。&lt;/p&gt;
+&lt;h2 id="[63b] zhan lue de hou tui"&gt;[63B] 戦略的後退&lt;/h2&gt;
+&lt;p&gt;早速この解析結果に基づいて実装したところ、残念ながら総和を保持するための変数のために却って 1B 増えてしまいました。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"s+=a;print s;a,b,c,d,e=d+e,a+e,b,c,d;"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;結果が正しいことは確認したのでこの方針をもう少し突き詰めて考えます。&lt;/p&gt;
+&lt;h2 id="lin jie liu xiang jian jian hua shi"&gt;隣接六項間漸化式&lt;/h2&gt;
+&lt;p&gt;利用する変数の削減が必要であると痛感したのでサイズ 1 の個体数だけ都合よく計算できないかと考えました。&lt;/p&gt;
+&lt;p&gt;(ここまで使っていた記号 c(1, n) などを &lt;span class="math"&gt;\(c_{1, n}\)&lt;/span&gt; に読み替えてください)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(c_{1, n} = c_{6, n-1} + c_{8, n-1}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(c_{2, n} = c_{1, n-1} + c_{6, n-1}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(c_{4, n} = c_{2, n-1}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(c_{8, n} = c_{4, n-1}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(c_{6, n} = c_{8, n-1}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;を思い出して 1. の &lt;span class="math"&gt;\(c_{1, n} = c_{6, n-1} + c_{8, n-1}\)&lt;/span&gt; をサイズ 1 の項だけで表すことを考えます。&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{eqnarray*}
+c_{1, n} &amp;amp;= c_{6, n-1} + c_{8, n-1}\\
+&amp;amp;=c_{8, n-2} + c_{4, n-2}\\
+&amp;amp;=c_{4, n-3} + c_{2, n-3}\\
+&amp;amp;=c_{2, n-4} + c_{1, n-4} + c_{6, n-4}\\
+&amp;amp;=c_{1, n-5} + c_{6, n-5} + c_{1, n-4} + c_{8, n-5}\\
+&amp;amp;=c_{1, n-5} + c_{1, n-4} + c_{6, n-5} + c_{8, n-5}\\
+&amp;amp;=c_{1, n-5} + c_{1, n-4} + c_{1, n-4}\\
+&amp;amp;=c_{1, n-5} + 2c_{1, n-4}\\
+\end{eqnarray*}
+$$&lt;/div&gt;
+&lt;p&gt;と&lt;/p&gt;
+&lt;div class="math"&gt;$$
+c_{1, n} = c_{1, n-5} + 2c_{1, n-4}
+$$&lt;/div&gt;
+&lt;p&gt;で表せることが解りました。&lt;/p&gt;
+&lt;p&gt;さてこれは隣接六項間の漸化式なので解いてみましょう。特性方程式は&lt;/p&gt;
+&lt;div class="math"&gt;$$
+x^5 - 2x - 1 = 0
+$$&lt;/div&gt;
+&lt;p&gt;ですが、残念なことに五次方程式には解の公式がありません。しかしすぐわかるように &lt;span class="math"&gt;\(x = -1\)&lt;/span&gt; がこの方程式の解の一つであることが解ります。従って因数分解すれば&lt;/p&gt;
+&lt;div class="math"&gt;$$
+x^5 - 2x - 1 = (x + 1)(x^4 - x^3 + x^2 - x -1)
+$$&lt;/div&gt;
+&lt;p&gt;と一次と四次の多項式に分解できました。後者の四次の多項式 = 0 の解は残念ながら複素数を含み、単純な有理数や整数ではないようです。おそらくこの漸化式を解いてもコードの短縮に寄与しそうにありません。今回は面倒くささに負けて計算を諦めましたが漸化式を解いて一般項を求めるのも面白いかもしれません。&lt;/p&gt;
+&lt;h2 id="[63b] ting zhi"&gt;[63B] 停滞&lt;/h2&gt;
+&lt;p&gt;脱線しましたので閑話休題して、サイズ 1 の要素数の漸化式は&lt;/p&gt;
+&lt;div class="math"&gt;$$
+c_{1, n} = c_{1, n-5} + 2c_{1, n-4}
+$$&lt;/div&gt;
+&lt;p&gt;であったので素直にこれを実装して&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"s+=a;print s;a,b,c,d,e=b,c,d,e,a+2*b;"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;残念ながら 63B と変わりありません。&lt;/p&gt;
+&lt;h2 id="[56b] yatsutoqian jin"&gt;[56B] やっと前進&lt;/h2&gt;
+&lt;p&gt;漸化式の計算を行っているときに気が付いたのですが、他のサイズの要素数も同じ漸化式で表せて&lt;/p&gt;
+&lt;div class="math"&gt;$$
+c_{s, n} = c_{s, n-5} + 2c_{s, n-4}
+$$&lt;/div&gt;
+&lt;p&gt;が全ての &lt;span class="math"&gt;\(s=1, 2, 4, 8, 6\)&lt;/span&gt; に対して成り立ちます。これらの総和を取り&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\sum_{s} c_{s, n} = \sum_{s} c_{s, n-5} + \sum_{s} 2c_{s, n-4}
+$$&lt;/div&gt;
+&lt;p&gt;総和はバイバイマンの総数であることを思い出すと&lt;/p&gt;
+&lt;div class="math"&gt;$$
+s_{n} = s_{n-5} + 2s_{n-4}
+$$&lt;/div&gt;
+&lt;p&gt;とバイバイマンの総和をじかに計算できました。バイバイマンの総数の漸化式に関する初項が 1, 1, 1, 1, 2 であることを合わせて実装すると&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"print a;a,b,c,d,e=b,c,d,e,a+2*b;"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ようやく 56B まで縮みました。&lt;/p&gt;
+&lt;h2 id="[53b] pei lie zai bi"&gt;[53B] 配列再び&lt;/h2&gt;
+&lt;p&gt;もうひとひねりが必要なので再び配列を利用します。更に計算するのが高々 100 世代なので rotate shift などもやめました。なりふりを構っている場合ではありません。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"print a[-5];a+=[a[-5]+2*a[-4]];"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで 53B まできました。これは&lt;/p&gt;
+&lt;p&gt;1, 1, 1, 1, 2, 3, 3, 3, 5, 8, ...&lt;/p&gt;
+&lt;p&gt;と漸化式に従って次の世代の総数を追加して無制限に成長していく配列で、末尾から -5 の位置を現在の世代の総数として出力しています。&lt;/p&gt;
+&lt;h2 id="[51b] zui hou noyi gong fu"&gt;[51B] 最後の一工夫&lt;/h2&gt;
+&lt;p&gt;53B のコードは配列のインデックスに負の値を使っており '-' だけ損をしています。この配列の順序を逆にして '-' を三つ削り、代わりに += を = と +a に置き換えても差し引きして 2B の短縮になります。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="s2"&gt;"print a[4];a=[a[4]+2*a[3]]+a;"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これが今回の私の回答でした。&lt;/p&gt;
+&lt;h1 id="zui hou ni_1"&gt;最後に&lt;/h1&gt;
+&lt;p&gt;あともう一バイトを削れないかと&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;標準入力で与えられる 100 を 2B で取り込めないか&lt;/li&gt;
+&lt;li&gt;100 を 2B で表せないか&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;といったことを考えたのですが、いずれもうまくいきませんでした。公開される python の回答やそのほかの言語の回答が楽しみです。&lt;/p&gt;
+&lt;p&gt;最後に、このような面白い問題を提供してくださった Ozy さまと、場を提供してくださった CodeIQ さまに感謝します。&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Code Golf"></category></entry><entry><title>rotate_left_shift(x, 1) - x の最適化</title><link href="/20140207.html" rel="alternate"></link><published>2014-02-07T00:00:00+09:00</published><updated>2014-02-07T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2014-02-07:/20140207.html</id><summary type="html">&lt;p&gt;rotate_left_shift(x, 1) - x の最適化&lt;/p&gt;</summary><content type="html">&lt;p&gt;uint32_t x に対して掲題の計算を行いたい。&lt;/p&gt;
+&lt;p&gt;rotate shift 命令のないプロセッサの場合は&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;を計算することになり四命令 (&amp;lt;&amp;lt;, |, &amp;gt;&amp;gt;, -) が必要となる。しかしこの演算は&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;と等価であるので後者であれば二命令 (+, &amp;gt;&amp;gt;) で実現できて効率が良い。&lt;/p&gt;
+&lt;p&gt;実際に等価である事は次のようにして確認できる。基本的なアイデアは x を上位 1 bit と下位 31 bit に分けて考えることである。&lt;/p&gt;
+&lt;p&gt;演算子 | の左右の有効ビットは左が上位 31 bit で右が下位 1 bit であるので重なりがない。よって | を + に置き換えられる。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;加法は結合法則と交換法則を持つので外側の括弧を外して演算の順序を入れ替えても良い。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;真ん中の x を下位 31 bit と上位 1 bit に分ける。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="mh"&gt;0x7FFF&lt;/span&gt; &lt;span class="n"&gt;FFFF&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="mh"&gt;0x8000&lt;/span&gt; &lt;span class="mo"&gt;0000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;前の二項は x の下位 31 bit の二倍から x の下位 31 bit を引いたものなので x の下位 31 bit に等しい。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="mh"&gt;0x7FFF&lt;/span&gt; &lt;span class="n"&gt;FFFF&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="mh"&gt;0x8000&lt;/span&gt; &lt;span class="mo"&gt;0000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;最上位ビットのみの数値の引き算は足し算と等しい。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="mh"&gt;0x7FFF&lt;/span&gt; &lt;span class="n"&gt;FFFF&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="mh"&gt;0x8000&lt;/span&gt; &lt;span class="mo"&gt;0000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;前の二項は x そのものである。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Optimization"></category><category term="Bitwise Operation"></category></entry></feed>
