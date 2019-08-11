@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog - Mathematics</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/mathematics.atom.xml" rel="self"></link><id>/</id><updated>2019-08-11T00:00:00+09:00</updated><entry><title>同値関係</title><link href="/20190811.html" rel="alternate"></link><published>2019-08-11T00:00:00+09:00</published><updated>2019-08-11T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-11:/20190811.html</id><summary type="html">&lt;p&gt;剰余計算の基礎となる同値関係について&lt;/p&gt;</summary><content type="html">&lt;h2 id="hazimeni"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;プログラミングではしばしば剰余計算 (割った余りの計算) が出てくる。このとき、やって良い操作と良くない操作の区別をつけたり、効率よく計算を行ったりするために、背景にある理屈を学ぶことは有用と思う。&lt;/p&gt;
+&lt;h2 id="tong zhi guan xi"&gt;同値関係&lt;/h2&gt;
+&lt;p&gt;まずは剰余計算で利用する "等しい" の意味を定める。ただし、剰余計算よりも一般的な場合を扱う。&lt;/p&gt;
+&lt;p&gt;集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; とその元 &lt;span class="math"&gt;\(a, b, c \in X\)&lt;/span&gt; に対して&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;反射律: &lt;span class="math"&gt;\(a \equiv a\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;対象律: &lt;span class="math"&gt;\(a \equiv b \Rightarrow b \equiv a\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;推移律: &lt;span class="math"&gt;\(a \equiv b, b \equiv c \Rightarrow a \equiv c\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を満たすとき、二項関係 &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; は同値関係であるという。&lt;/p&gt;
+&lt;h3 id="tong zhi guan xi noli"&gt;同値関係の例&lt;/h3&gt;
+&lt;p&gt;整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; に対して、ある &lt;span class="math"&gt;\(0\)&lt;/span&gt; でない元 &lt;span class="math"&gt;\(n \in \mathbb{Z}\)&lt;/span&gt; を一つ取る。任意の &lt;span class="math"&gt;\(a, b \in \mathbb{Z}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(a, b\)&lt;/span&gt; を &lt;span class="math"&gt;\(n\)&lt;/span&gt; で割った余りが等しいとき &lt;span class="math"&gt;\(a \equiv b \mod n\)&lt;/span&gt; と書く。このとき &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; は同値関係となる。&lt;/p&gt;
+&lt;p&gt;反射律と対象律は明らかなので、推移律だけ示す。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(a, b, c \in \mathbb{Z}\)&lt;/span&gt; が &lt;span class="math"&gt;\(a \equiv b \mod n, b \equiv c \mod n\)&lt;/span&gt; を満たすとする。このとき、ある &lt;span class="math"&gt;\(p, q \in \mathbb{Z}\)&lt;/span&gt; が存在して &lt;span class="math"&gt;\(a = p \times n + b, b = q \times n + c\)&lt;/span&gt; とかける。後者を前者に代入して &lt;span class="math"&gt;\(a = p \times n + q \times n + c\)&lt;/span&gt; より &lt;span class="math"&gt;\(a = (p + q) \times n + c\)&lt;/span&gt; となり &lt;span class="math"&gt;\(a \equiv c \mod n\)&lt;/span&gt; とわかった。&lt;/p&gt;
+&lt;p&gt;整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; に対して、通常の意味の &lt;span class="math"&gt;\(=\)&lt;/span&gt; は同値関係である。また不等号 &lt;span class="math"&gt;\(&amp;gt;\)&lt;/span&gt; や &lt;span class="math"&gt;\(\geq\)&lt;/span&gt; は、推移律を満たすものの、反射律と対象律や対象律を満たさないので同値関係ではない。&lt;/p&gt;
+&lt;h2 id="tong zhi lei_1"&gt;同値類&lt;/h2&gt;
+&lt;p&gt;同値関係によって等しいとみなせる要素の集まりに分割することを考える。&lt;/p&gt;
+&lt;p&gt;集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; とその元 &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt; を一つ取り &lt;span class="math"&gt;\(X\)&lt;/span&gt; の同値関係を &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; とする。このとき&lt;/p&gt;
+&lt;div class="math"&gt;$$C(x) = \left\{y \in X|y \equiv x\right\}$$&lt;/div&gt;
+&lt;p&gt;を &lt;span class="math"&gt;\(x\)&lt;/span&gt; の同値類という。&lt;/p&gt;
+&lt;p&gt;例えば、整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; に対して 3 で割った余りを考えると&lt;/p&gt;
+&lt;div class="math"&gt;$$C(1) = \left\{..., -2, 1, 4, 7, ...\right\}$$&lt;/div&gt;
+&lt;p&gt;など。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(x, y \in X\)&lt;/span&gt; に対して、その同値類 &lt;span class="math"&gt;\(C(x), C(y)\)&lt;/span&gt; に交わりがあれば &lt;span class="math"&gt;\(C(x) = C(y)\)&lt;/span&gt; である。&lt;/p&gt;
+&lt;p&gt;任意の &lt;span class="math"&gt;\(x \in C(x)\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(z \in C(x) \cap C(y)\)&lt;/span&gt; を取る。すると &lt;span class="math"&gt;\(z\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; の元であるので &lt;span class="math"&gt;\(x \equiv z\)&lt;/span&gt; となる。一方で &lt;span class="math"&gt;\(z\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(y)\)&lt;/span&gt; の元でもあるので &lt;span class="math"&gt;\(x \in C(y)\)&lt;/span&gt; となり &lt;span class="math"&gt;\(C(x) \subseteq C(y)\)&lt;/span&gt; が示せた。逆の包含関係も同様に示せる。&lt;/p&gt;
+&lt;p&gt;このようにして同値類の全体は集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; を互いに交わらない部分集合に分割する。同値類全体の集合を、集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; の同値関係 &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; による商集合といい &lt;span class="math"&gt;\(X/\equiv\)&lt;/span&gt; と書く。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(X\)&lt;/span&gt; から &lt;span class="math"&gt;\(X/\equiv\)&lt;/span&gt; への上への写像&lt;/p&gt;
+&lt;div class="math"&gt;$$f: X\Rightarrow X/\equiv$$&lt;/div&gt;
+&lt;p&gt;を考える。このとき &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; を対応させるとき、つまり &lt;span class="math"&gt;\(f(x) = C(x)\)&lt;/span&gt; とするとき、写像 &lt;span class="math"&gt;\(f\)&lt;/span&gt; を自然な射影という。写像 &lt;span class="math"&gt;\(f\)&lt;/span&gt; は単射であるが、一般には全射ではない。&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Residual"></category></entry></feed>
