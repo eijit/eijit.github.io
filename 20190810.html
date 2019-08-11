@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="eijit" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="AtCoder, ProgrammingContest, Programming, " />
+
+<meta property="og:title" content="AtCoder Beginner Contest 137 参加 "/>
+<meta property="og:url" content="/20190810.html" />
+<meta property="og:description" content="ABC の三完答" />
+<meta property="og:site_name" content="eijit&#39;s blog" />
+<meta property="og:article:author" content="eijit" />
+<meta property="og:article:published_time" content="2019-08-10T00:00:00+09:00" />
+<meta name="twitter:title" content="AtCoder Beginner Contest 137 参加 ">
+<meta name="twitter:description" content="ABC の三完答">
+
+        <title>AtCoder Beginner Contest 137 参加  · eijit&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
+
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>eijit's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories">Categories</a></li>
+                            <li ><a href="/tags">Tags</a></li>
+                            <li ><a href="/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/20190810.html"> AtCoder Beginner Contest 137 参加  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div id="toc"><ul><li><a class="toc-href" href="#" title="AtCoder Beginner Contest 137 参加">AtCoder Beginner Contest 137 参加</a><ul><li><a class="toc-href" href="#wen ti  a" title="問題 A">問題 A</a></li><li><a class="toc-href" href="#wen ti  b" title="問題 B">問題 B</a></li><li><a class="toc-href" href="#wen ti  c" title="問題 C">問題 C</a></li><li><a class="toc-href" href="#wen ti  d" title="問題 D">問題 D</a></li></ul></li></ul></div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            <p><a href="https://atcoder.jp/contests/abc137">AtCoder Beginner Contest 137</a> に参加した。今回は ABC 3 完答 の 1885 位でパフォーマンスは 974 だった。</p>
+<p>以下のコードは PyPy3 (2.4.0) で AC を確認している。</p>
+<h2 id="wen ti  a">問題 A</h2>
+<p><span class="math">\(A + B, A - B, A \times B\)</span> の最大値を表示せよという問題なので、そのまま計算した。</p>
+<div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span> <span class="o">-</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span><span class="p">))</span>
+</pre></div>
+<h2 id="wen ti  b">問題 B</h2>
+<p>設問の制約から黒石が左右の端に到達することを考えなくても良い。</p>
+<ul>
+<li>黒石が最も左に伸びるのは X が右端であった場合</li>
+<li>黒石が最も右に伸びるのは X が左端であった場合</li>
+</ul>
+<p>なのでその時の左右とその間の座標の数字を空白区切りで出力すれば良い。</p>
+<div class="highlight"><pre><span></span><span class="n">K</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">LR</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span> <span class="o">+</span> <span class="n">K</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">LR</span><span class="p">)))</span>
+</pre></div>
+<h2 id="wen ti  c">問題 C</h2>
+<p>2 つの文字列がアナグラムとして一致するかどうかを判定するには、両方の文字列をソートしてから比較すれば良い。例えば問題文に例示されている <code>greenbin</code> と <code>beginner</code> をソートすればともに <code>beeginnr</code> となり一致を容易に判定できる。</p>
+<p>解説よりややこしくなっているがコンテスト中は下記のように考えた。</p>
+<ol>
+<li>各入力文字列 <span class="math">\(s_i\)</span> をソートする</li>
+<li>S = [<span class="math">\(s_1\)</span>, <span class="math">\(s_2\)</span>, ..., <span class="math">\(s_N\)</span>] をソートする</li>
+<li>一致する要素の個数を数え上げる</li>
+</ol>
+<p>最初は雑に二重ループを回して TLE を食らった。一致する要素がある間はカウントアップして、値が変わったらカウンタをリセットする方針で実装して通した。なお個数の数え上げについては、一致するものの個数が <span class="math">\(c\)</span> の場合に <span class="math">\(1\)</span> から <span class="math">\(c - 1\)</span> の総和となる。</p>
+<div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="c1"># print(N, S)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">S</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="c1"># print(S)</span>
+
+<span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">si</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">sj</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">si</span> <span class="o">!=</span> <span class="n">sj</span><span class="p">:</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span> <span class="o">*</span> <span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># 最後の足し忘れ防止</span>
+            <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span> <span class="o">*</span> <span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</pre></div>
+<h2 id="wen ti  d">問題 D</h2>
+<p>コンテスト中に AC できず。最初は、初日から考えて受取可能なもののうちで報酬の高いものから埋めていく方針で考えたが、サンプルケースが通るので意気揚々と提出したものの WA を食らった。今度は逆に最終日から埋めていく方針にしたが、日数と報酬のどちらを優先してソートしてもうまく行かず時間切れとなった。解説を読みつつ理解したが、やはり日数の制約の中で最も報酬の高いものを調べて選ぶ必要があった。</p>
+<p>コンテスト後に改めて実装して AC した。方針は優先度付きキューを 2 つ使って</p>
+<ol>
+<li>日付優先で 1 つ目のキューに入力を貯める</li>
+<li>残日数が少ない方から考える</li>
+<li>残日数内のものを 1 つ目のキューから取り出して、報酬優先 (高いものが先頭に来るように -1 倍している) で 2 つ目に追加する</li>
+<li>2 つ目のキューから取り出して得られる報酬に加算する</li>
+</ol>
+<p>という方針で実装した。</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">heapq</span>
+
+<span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">AB</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">AB</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># print(N, M, AB)</span>
+
+<span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">work</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+    <span class="n">remain</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1"># print('remain={}, AB={}, ans={}'.format(remain, AB, ans))</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ab</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">remain</span><span class="p">:</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">AB</span><span class="p">,</span> <span class="n">ab</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">work</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">ab</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ab</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">work</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">work</span><span class="p">)</span>
+    <span class="n">ans</span> <span class="o">-=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># print('work={}'.format(work))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</pre></div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            <div>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-08-10T00:00:00+09:00"> 8月 10, 2019</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#programming-ref">Programming</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags#atcoder-ref">AtCoder
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags#programmingcontest-ref">ProgrammingContest
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://twitter.com/eijit" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://github.com/eijit" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://www.facebook.com/eiji.taniguchi.56" title="My Facebook Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-facebook sidebar-social-links"></i></a>
+    <a href="https://bookmeter.com/users/13752" title="My Bookmeter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-bookmeter sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>
