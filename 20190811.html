@@ -84,11 +84,11 @@
 <p>まずは剰余計算で利用する "等しい" の意味を定める。ただし、剰余計算よりも一般的な場合を扱う。</p>
 <p>集合 <span class="math">\(X\)</span> とその元 <span class="math">\(a, b, c \in X\)</span> に対して</p>
 <ul>
-<li>反射律: <span class="math">\(a \equiv a\)</span></li>
-<li>対象律: <span class="math">\(a \equiv b \Rightarrow b \equiv a\)</span></li>
-<li>推移律: <span class="math">\(a \equiv b, b \equiv c \Rightarrow a \equiv c\)</span></li>
+<li>反射律: <span class="math">\(a \sim a\)</span></li>
+<li>対象律: <span class="math">\(a \sim b \Rightarrow b \sim a\)</span></li>
+<li>推移律: <span class="math">\(a \sim b, b \sim c \Rightarrow a \sim c\)</span></li>
 </ul>
-<p>を満たすとき、二項関係 <span class="math">\(\equiv\)</span> は同値関係であるという。</p>
+<p>を満たすとき、二項関係 <span class="math">\(\sim\)</span> は同値関係であるという。</p>
 <h3 id="tong zhi guan xi noli">同値関係の例</h3>
 <p>整数環 <span class="math">\(\mathbb{Z}\)</span> に対して、ある <span class="math">\(0\)</span> でない元 <span class="math">\(n \in \mathbb{Z}\)</span> を一つ取る。任意の <span class="math">\(a, b \in \mathbb{Z}\)</span> に対して <span class="math">\(a, b\)</span> を <span class="math">\(n\)</span> で割った余りが等しいとき <span class="math">\(a \equiv b \mod n\)</span> と書く。このとき <span class="math">\(\equiv\)</span> は同値関係となる。</p>
 <p>反射律と対象律は明らかなので、推移律だけ示す。</p>
@@ -96,18 +96,19 @@
 <p>整数環 <span class="math">\(\mathbb{Z}\)</span> に対して、通常の意味の <span class="math">\(=\)</span> は同値関係である。また不等号 <span class="math">\(&gt;\)</span> や <span class="math">\(\geq\)</span> は、推移律を満たすものの、反射律と対象律や対象律を満たさないので同値関係ではない。</p>
 <h2 id="tong zhi lei_1">同値類</h2>
 <p>同値関係によって等しいとみなせる要素の集まりに分割することを考える。</p>
-<p>集合 <span class="math">\(X\)</span> とその元 <span class="math">\(x \in X\)</span> を一つ取り <span class="math">\(X\)</span> の同値関係を <span class="math">\(\equiv\)</span> とする。このとき</p>
-<div class="math">$$C(x) = \left\{y \in X|y \equiv x\right\}$$</div>
+<p>集合 <span class="math">\(X\)</span> とその元 <span class="math">\(x \in X\)</span> を一つ取り <span class="math">\(X\)</span> の同値関係を <span class="math">\(\sim\)</span> とする。このとき <span class="math">\(x\)</span> と同値関係にある <span class="math">\(X\)</span> の元全体の集合</p>
+<div class="math">$$C(x) = \left\{y \in X|y \sim x\right\}$$</div>
 <p>を <span class="math">\(x\)</span> の同値類という。</p>
 <p>例えば、整数環 <span class="math">\(\mathbb{Z}\)</span> に対して 3 で割った余りを考えると</p>
 <div class="math">$$C(1) = \left\{..., -2, 1, 4, 7, ...\right\}$$</div>
 <p>など。</p>
 <p><span class="math">\(x, y \in X\)</span> に対して、その同値類 <span class="math">\(C(x), C(y)\)</span> に交わりがあれば <span class="math">\(C(x) = C(y)\)</span> である。</p>
-<p>任意の <span class="math">\(x \in C(x)\)</span> に対して <span class="math">\(z \in C(x) \cap C(y)\)</span> を取る。すると <span class="math">\(z\)</span> は <span class="math">\(C(x)\)</span> の元であるので <span class="math">\(x \equiv z\)</span> となる。一方で <span class="math">\(z\)</span> は <span class="math">\(C(y)\)</span> の元でもあるので <span class="math">\(x \in C(y)\)</span> となり <span class="math">\(C(x) \subseteq C(y)\)</span> が示せた。逆の包含関係も同様に示せる。</p>
-<p>このようにして同値類の全体は集合 <span class="math">\(X\)</span> を互いに交わらない部分集合に分割する。同値類全体の集合を、集合 <span class="math">\(X\)</span> の同値関係 <span class="math">\(\equiv\)</span> による商集合といい <span class="math">\(X/\equiv\)</span> と書く。</p>
-<p><span class="math">\(X\)</span> から <span class="math">\(X/\equiv\)</span> への上への写像</p>
-<div class="math">$$f: X\Rightarrow X/\equiv$$</div>
+<p>任意の <span class="math">\(a \in C(x)\)</span> に対して <span class="math">\(b \in C(x) \cap C(y)\)</span> を取る。すると <span class="math">\(b\)</span> は <span class="math">\(C(x)\)</span> の元であるので <span class="math">\(a \sim b\)</span> となる。一方で <span class="math">\(b\)</span> は <span class="math">\(C(y)\)</span> の元でもあるので <span class="math">\(a \in C(y)\)</span> となり <span class="math">\(C(x) \subseteq C(y)\)</span> が示せた。逆の包含関係も同様に示せる。</p>
+<p>このようにして同値類の全体は集合 <span class="math">\(X\)</span> を互いに交わらない部分集合に分割する。同値類全体の集合を、集合 <span class="math">\(X\)</span> の同値関係 <span class="math">\(\sim\)</span> による商集合といい <span class="math">\(X/\sim\)</span> と書く。</p>
+<p><span class="math">\(X\)</span> から <span class="math">\(X/\sim\)</span> への上への写像</p>
+<div class="math">$$f: X\Rightarrow X/\sim$$</div>
 <p>を考える。このとき <span class="math">\(x \in X\)</span> に対して <span class="math">\(C(x)\)</span> を対応させるとき、つまり <span class="math">\(f(x) = C(x)\)</span> とするとき、写像 <span class="math">\(f\)</span> を自然な射影という。写像 <span class="math">\(f\)</span> は単射であるが、一般には全射ではない。</p>
+<p><span class="math">\(C(x)\)</span> に対して <span class="math">\(x\)</span> を <span class="math">\(C(x)\)</span> の代表元という。</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

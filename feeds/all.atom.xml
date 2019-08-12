@@ -5,11 +5,11 @@
 &lt;p&gt;まずは剰余計算で利用する "等しい" の意味を定める。ただし、剰余計算よりも一般的な場合を扱う。&lt;/p&gt;
 &lt;p&gt;集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; とその元 &lt;span class="math"&gt;\(a, b, c \in X\)&lt;/span&gt; に対して&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;反射律: &lt;span class="math"&gt;\(a \equiv a\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;対象律: &lt;span class="math"&gt;\(a \equiv b \Rightarrow b \equiv a\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;推移律: &lt;span class="math"&gt;\(a \equiv b, b \equiv c \Rightarrow a \equiv c\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;反射律: &lt;span class="math"&gt;\(a \sim a\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;対象律: &lt;span class="math"&gt;\(a \sim b \Rightarrow b \sim a\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;推移律: &lt;span class="math"&gt;\(a \sim b, b \sim c \Rightarrow a \sim c\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;を満たすとき、二項関係 &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; は同値関係であるという。&lt;/p&gt;
+&lt;p&gt;を満たすとき、二項関係 &lt;span class="math"&gt;\(\sim\)&lt;/span&gt; は同値関係であるという。&lt;/p&gt;
 &lt;h3 id="tong zhi guan xi noli"&gt;同値関係の例&lt;/h3&gt;
 &lt;p&gt;整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; に対して、ある &lt;span class="math"&gt;\(0\)&lt;/span&gt; でない元 &lt;span class="math"&gt;\(n \in \mathbb{Z}\)&lt;/span&gt; を一つ取る。任意の &lt;span class="math"&gt;\(a, b \in \mathbb{Z}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(a, b\)&lt;/span&gt; を &lt;span class="math"&gt;\(n\)&lt;/span&gt; で割った余りが等しいとき &lt;span class="math"&gt;\(a \equiv b \mod n\)&lt;/span&gt; と書く。このとき &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; は同値関係となる。&lt;/p&gt;
 &lt;p&gt;反射律と対象律は明らかなので、推移律だけ示す。&lt;/p&gt;
@@ -17,18 +17,19 @@
 &lt;p&gt;整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; に対して、通常の意味の &lt;span class="math"&gt;\(=\)&lt;/span&gt; は同値関係である。また不等号 &lt;span class="math"&gt;\(&amp;gt;\)&lt;/span&gt; や &lt;span class="math"&gt;\(\geq\)&lt;/span&gt; は、推移律を満たすものの、反射律と対象律や対象律を満たさないので同値関係ではない。&lt;/p&gt;
 &lt;h2 id="tong zhi lei_1"&gt;同値類&lt;/h2&gt;
 &lt;p&gt;同値関係によって等しいとみなせる要素の集まりに分割することを考える。&lt;/p&gt;
-&lt;p&gt;集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; とその元 &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt; を一つ取り &lt;span class="math"&gt;\(X\)&lt;/span&gt; の同値関係を &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; とする。このとき&lt;/p&gt;
-&lt;div class="math"&gt;$$C(x) = \left\{y \in X|y \equiv x\right\}$$&lt;/div&gt;
+&lt;p&gt;集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; とその元 &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt; を一つ取り &lt;span class="math"&gt;\(X\)&lt;/span&gt; の同値関係を &lt;span class="math"&gt;\(\sim\)&lt;/span&gt; とする。このとき &lt;span class="math"&gt;\(x\)&lt;/span&gt; と同値関係にある &lt;span class="math"&gt;\(X\)&lt;/span&gt; の元全体の集合&lt;/p&gt;
+&lt;div class="math"&gt;$$C(x) = \left\{y \in X|y \sim x\right\}$$&lt;/div&gt;
 &lt;p&gt;を &lt;span class="math"&gt;\(x\)&lt;/span&gt; の同値類という。&lt;/p&gt;
 &lt;p&gt;例えば、整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; に対して 3 で割った余りを考えると&lt;/p&gt;
 &lt;div class="math"&gt;$$C(1) = \left\{..., -2, 1, 4, 7, ...\right\}$$&lt;/div&gt;
 &lt;p&gt;など。&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(x, y \in X\)&lt;/span&gt; に対して、その同値類 &lt;span class="math"&gt;\(C(x), C(y)\)&lt;/span&gt; に交わりがあれば &lt;span class="math"&gt;\(C(x) = C(y)\)&lt;/span&gt; である。&lt;/p&gt;
-&lt;p&gt;任意の &lt;span class="math"&gt;\(x \in C(x)\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(z \in C(x) \cap C(y)\)&lt;/span&gt; を取る。すると &lt;span class="math"&gt;\(z\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; の元であるので &lt;span class="math"&gt;\(x \equiv z\)&lt;/span&gt; となる。一方で &lt;span class="math"&gt;\(z\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(y)\)&lt;/span&gt; の元でもあるので &lt;span class="math"&gt;\(x \in C(y)\)&lt;/span&gt; となり &lt;span class="math"&gt;\(C(x) \subseteq C(y)\)&lt;/span&gt; が示せた。逆の包含関係も同様に示せる。&lt;/p&gt;
-&lt;p&gt;このようにして同値類の全体は集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; を互いに交わらない部分集合に分割する。同値類全体の集合を、集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; の同値関係 &lt;span class="math"&gt;\(\equiv\)&lt;/span&gt; による商集合といい &lt;span class="math"&gt;\(X/\equiv\)&lt;/span&gt; と書く。&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(X\)&lt;/span&gt; から &lt;span class="math"&gt;\(X/\equiv\)&lt;/span&gt; への上への写像&lt;/p&gt;
-&lt;div class="math"&gt;$$f: X\Rightarrow X/\equiv$$&lt;/div&gt;
+&lt;p&gt;任意の &lt;span class="math"&gt;\(a \in C(x)\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(b \in C(x) \cap C(y)\)&lt;/span&gt; を取る。すると &lt;span class="math"&gt;\(b\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; の元であるので &lt;span class="math"&gt;\(a \sim b\)&lt;/span&gt; となる。一方で &lt;span class="math"&gt;\(b\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(y)\)&lt;/span&gt; の元でもあるので &lt;span class="math"&gt;\(a \in C(y)\)&lt;/span&gt; となり &lt;span class="math"&gt;\(C(x) \subseteq C(y)\)&lt;/span&gt; が示せた。逆の包含関係も同様に示せる。&lt;/p&gt;
+&lt;p&gt;このようにして同値類の全体は集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; を互いに交わらない部分集合に分割する。同値類全体の集合を、集合 &lt;span class="math"&gt;\(X\)&lt;/span&gt; の同値関係 &lt;span class="math"&gt;\(\sim\)&lt;/span&gt; による商集合といい &lt;span class="math"&gt;\(X/\sim\)&lt;/span&gt; と書く。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(X\)&lt;/span&gt; から &lt;span class="math"&gt;\(X/\sim\)&lt;/span&gt; への上への写像&lt;/p&gt;
+&lt;div class="math"&gt;$$f: X\Rightarrow X/\sim$$&lt;/div&gt;
 &lt;p&gt;を考える。このとき &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; を対応させるとき、つまり &lt;span class="math"&gt;\(f(x) = C(x)\)&lt;/span&gt; とするとき、写像 &lt;span class="math"&gt;\(f\)&lt;/span&gt; を自然な射影という。写像 &lt;span class="math"&gt;\(f\)&lt;/span&gt; は単射であるが、一般には全射ではない。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(x\)&lt;/span&gt; を &lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; の代表元という。&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
