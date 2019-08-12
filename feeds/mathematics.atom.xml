@@ -1,5 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog - Mathematics</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/mathematics.atom.xml" rel="self"></link><id>/</id><updated>2019-08-11T00:00:00+09:00</updated><entry><title>同値関係</title><link href="/20190811.html" rel="alternate"></link><published>2019-08-11T00:00:00+09:00</published><updated>2019-08-11T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-11:/20190811.html</id><summary type="html">&lt;p&gt;剰余計算の基礎となる同値関係について&lt;/p&gt;</summary><content type="html">&lt;h2 id="hazimeni"&gt;はじめに&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog - Mathematics</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/mathematics.atom.xml" rel="self"></link><id>/</id><updated>2019-08-12T00:00:00+09:00</updated><entry><title>剰余の同値関係に演算を導入する</title><link href="/20190812.html" rel="alternate"></link><published>2019-08-12T00:00:00+09:00</published><updated>2019-08-12T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-12:/20190812.html</id><summary type="html">&lt;p&gt;剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。&lt;/p&gt;</summary><content type="html">&lt;h2 id="ji hao nozhun bei"&gt;記号の準備&lt;/h2&gt;
+&lt;p&gt;整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; とその &lt;span class="math"&gt;\(0\)&lt;/span&gt; でない元 &lt;span class="math"&gt;\(n \in \mathbb{Z}\)&lt;/span&gt; を一つ取る。同値関係を &lt;span class="math"&gt;\(a, b \in \mathbb{Z}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\( a \equiv b \mod n\)&lt;/span&gt; と定めると、同値類は全部で &lt;span class="math"&gt;\(n\)&lt;/span&gt; 個あり&lt;/p&gt;
+&lt;div class="math"&gt;$$C(0), C(1), \ldots, C(n-1)$$&lt;/div&gt;
+&lt;p&gt;であるが、簡単のため&lt;/p&gt;
+&lt;div class="math"&gt;$$\overline{0}, \overline{1}, \ldots, \overline{n-1}$$&lt;/div&gt;
+&lt;p&gt;と書くことにする。&lt;/p&gt;
+&lt;p&gt;また商集合を&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbb{Z}/n\mathbb{Z}$$&lt;/div&gt;
+&lt;p&gt;と書くことにする。&lt;/p&gt;
+&lt;h2 id="yan suan nodao ru"&gt;演算の導入&lt;/h2&gt;
+&lt;p&gt;この同値類の間にも整数と同様の自然な演算が定義できると望ましい。例えば &lt;span class="math"&gt;\(n = 7\)&lt;/span&gt; としたときに &lt;span class="math"&gt;\(9, 16 \in \overline{2}\)&lt;/span&gt; と &lt;span class="math"&gt;\(3, 17 \in \overline{3}\)&lt;/span&gt; に対して&lt;/p&gt;
+&lt;div class="math"&gt;$$9 + 3 = 12 \equiv 5 \mod 7$$&lt;/div&gt;
+&lt;div class="math"&gt;$$16 + 17 = 33 \equiv 5 \mod 7$$&lt;/div&gt;
+&lt;p&gt;と同値類のどの元に対してもうまく演算できるように見える。このことを代表元のとり方によらない、という。&lt;/p&gt;
+&lt;h3 id="jia fa noque ren"&gt;加法の確認&lt;/h3&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\overline{p}, \overline{q} \in \mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; に対して、加法 &lt;span class="math"&gt;\(+\)&lt;/span&gt; を&lt;/p&gt;
+&lt;div class="math"&gt;$$\overline{p} + \overline{q} = \overline{p + q}$$&lt;/div&gt;
+&lt;p&gt;と定める。このとき加法が代表元のとり方によらないことを示す。&lt;/p&gt;
+&lt;p&gt;任意の &lt;span class="math"&gt;\(a \in \overline{p}, b \in \overline{q}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(a = r \times n + p, b = s \times n + q\)&lt;/span&gt; となる &lt;span class="math"&gt;\(r, s \in \mathbb{Z}\)&lt;/span&gt; が存在する。&lt;/p&gt;
+&lt;div class="math"&gt;$$a + b = r \times n + p + s \times n + q = (r + s) \times n + p + q \equiv p + q \mod n$$&lt;/div&gt;
+&lt;p&gt;より代表元のとり方によらないことがわかった。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\overline{p}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(\overline{-p}\)&lt;/span&gt; は加法に関する逆元となる。証明は容易なので省略する。&lt;/p&gt;
+&lt;h3 id="cheng fa noque ren"&gt;乗法の確認&lt;/h3&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\overline{p}, \overline{q} \in \mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; に対して、乗法 &lt;span class="math"&gt;\(\times\)&lt;/span&gt; を&lt;/p&gt;
+&lt;div class="math"&gt;$$\overline{p} \times \overline{q} = \overline{p \times q}$$&lt;/div&gt;
+&lt;p&gt;と定める。このとき乗法が代表元のとり方によらないことを示す。&lt;/p&gt;
+&lt;p&gt;任意の &lt;span class="math"&gt;\(a \in \overline{p}, b \in \overline{q}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(a = r \times n + p, b = s \times n + q\)&lt;/span&gt; となる &lt;span class="math"&gt;\(r, s \in \mathbb{Z}\)&lt;/span&gt; が存在する。&lt;/p&gt;
+&lt;div class="math"&gt;$$a \times b = (r \times n + p) \times (s \times n + q) = (r \times s \times n + r \times q + s \times p) \times n + p \times q \equiv p \times q \mod n$$&lt;/div&gt;
+&lt;p&gt;より代表元のとり方によらないことがわかった。&lt;/p&gt;
+&lt;h2 id="matome_1"&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;ここまでで剰余の同値関係に関して、同値類の間に自然な演算を定義でき、この演算が安全であることを確認した。割り算に関しては次回に取り扱う。&lt;/p&gt;
+&lt;p&gt;なお &lt;span class="math"&gt;\(\mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; はここで定義した加法と乗法に関して環をなす。&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>同値関係</title><link href="/20190811.html" rel="alternate"></link><published>2019-08-11T00:00:00+09:00</published><updated>2019-08-11T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-11:/20190811.html</id><summary type="html">&lt;p&gt;剰余計算の基礎となる同値関係について&lt;/p&gt;</summary><content type="html">&lt;h2 id="hazimeni"&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;プログラミングではしばしば剰余計算 (割った余りの計算) が出てくる。このとき、やって良い操作と良くない操作の区別をつけたり、効率よく計算を行ったりするために、背景にある理屈を学ぶことは有用と思う。&lt;/p&gt;
 &lt;h2 id="tong zhi guan xi"&gt;同値関係&lt;/h2&gt;
 &lt;p&gt;まずは剰余計算で利用する "等しい" の意味を定める。ただし、剰余計算よりも一般的な場合を扱う。&lt;/p&gt;
@@ -21,7 +113,7 @@
 &lt;div class="math"&gt;$$C(x) = \left\{y \in X|y \sim x\right\}$$&lt;/div&gt;
 &lt;p&gt;を &lt;span class="math"&gt;\(x\)&lt;/span&gt; の同値類という。&lt;/p&gt;
 &lt;p&gt;例えば、整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; に対して 3 で割った余りを考えると&lt;/p&gt;
-&lt;div class="math"&gt;$$C(1) = \left\{..., -2, 1, 4, 7, ...\right\}$$&lt;/div&gt;
+&lt;div class="math"&gt;$$C(1) = \left\{\ldots, -2, 1, 4, 7, \ldots\right\}$$&lt;/div&gt;
 &lt;p&gt;など。&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(x, y \in X\)&lt;/span&gt; に対して、その同値類 &lt;span class="math"&gt;\(C(x), C(y)\)&lt;/span&gt; に交わりがあれば &lt;span class="math"&gt;\(C(x) = C(y)\)&lt;/span&gt; である。&lt;/p&gt;
 &lt;p&gt;任意の &lt;span class="math"&gt;\(a \in C(x)\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(b \in C(x) \cap C(y)\)&lt;/span&gt; を取る。すると &lt;span class="math"&gt;\(b\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(x)\)&lt;/span&gt; の元であるので &lt;span class="math"&gt;\(a \sim b\)&lt;/span&gt; となる。一方で &lt;span class="math"&gt;\(b\)&lt;/span&gt; は &lt;span class="math"&gt;\(C(y)\)&lt;/span&gt; の元でもあるので &lt;span class="math"&gt;\(a \in C(y)\)&lt;/span&gt; となり &lt;span class="math"&gt;\(C(x) \subseteq C(y)\)&lt;/span&gt; が示せた。逆の包含関係も同様に示せる。&lt;/p&gt;
