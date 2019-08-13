@@ -1,5 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog - Mathematics</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/mathematics.atom.xml" rel="self"></link><id>/</id><updated>2019-08-12T00:00:00+09:00</updated><entry><title>剰余の同値関係に演算を導入する</title><link href="/20190812.html" rel="alternate"></link><published>2019-08-12T00:00:00+09:00</published><updated>2019-08-12T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-12:/20190812.html</id><summary type="html">&lt;p&gt;剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。&lt;/p&gt;</summary><content type="html">&lt;h2 id="ji hao nozhun bei"&gt;記号の準備&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog - Mathematics</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/mathematics.atom.xml" rel="self"></link><id>/</id><updated>2019-08-13T00:00:00+09:00</updated><entry><title>剰余の同値関係で乗法の逆元を考える</title><link href="/20190813.html" rel="alternate"></link><published>2019-08-13T00:00:00+09:00</published><updated>2019-08-13T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-13:/20190813.html</id><summary type="html">&lt;p&gt;剰余の同値関係で除算について考察する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="./20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="./20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を参照してください。&lt;/p&gt;
+&lt;h2 id="li woguan cha suru"&gt;例を観察する&lt;/h2&gt;
+&lt;p&gt;商集合 &lt;span class="math"&gt;\(\mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(n = 7\)&lt;/span&gt; とする。このとき各同値類について乗算結果を調べる。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;この表を観察してわかるのは&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt; をかけると &lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt; になる&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt; をかけても値が変わらない&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt; をかけた行または列を除いて &lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt; から &lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt; が一度ずつ現れる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ということで、上の 2 つは自明だが最後の 1 つはいつでも成り立つだろうか。これはいつでも成り立つわけではなく例えば &lt;span class="math"&gt;\(n = 6\)&lt;/span&gt; とすると&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{5}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{4}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{3}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;となり &lt;span class="math"&gt;\(\overline{2} \times \overline{3} = \overline{0}\)&lt;/span&gt; など &lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt; ではない値同士を掛けて &lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt; になるものが見受けられる。一般に &lt;span class="math"&gt;\(0\)&lt;/span&gt; ではない環の元を掛けて &lt;span class="math"&gt;\(0\)&lt;/span&gt; になる元のことを零因子という。&lt;/p&gt;
+&lt;p&gt;ところで零因子を持つ環では&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\overline{2} \times \overline{2} = \overline{4}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\overline{5} \times \overline{2} = \overline{4}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;と &lt;span class="math"&gt;\(\overline{2} \ne \overline{5}\)&lt;/span&gt; より、両者の左辺の後ろの項の &lt;span class="math"&gt;\(\overline{2}\)&lt;/span&gt; を取り除くといった簡約ができないことに注意する。&lt;/p&gt;
+&lt;h2 id="fa  \(n\) wosu shu toshitachang he noni yuan"&gt;法 &lt;span class="math"&gt;\(n\)&lt;/span&gt; を素数とした場合の逆元&lt;/h2&gt;
+&lt;p&gt;容易に推測されるように &lt;span class="math"&gt;\(n\)&lt;/span&gt; が素数の場合は零因子を持たず、合成数の場合はその約数が零因子となる。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\overline{0}\)&lt;/span&gt; をかけた行または列を除いて &lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt; から &lt;span class="math"&gt;\(\overline{6}\)&lt;/span&gt; が一度ずつ現れる&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;に戻る。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n\)&lt;/span&gt; を素数とし &lt;span class="math"&gt;\(\mathbb{Z}/n\mathbb{Z} \ni \overline{a} \ne \overline{0}\)&lt;/span&gt; を 1 つ取る。相異なる &lt;span class="math"&gt;\(\overline{p}, \overline{q} \in \mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; に対して、&lt;/p&gt;
+&lt;div class="math"&gt;$$\overline{a} \times \overline{p} \ne \overline{a} \times \overline{q}$$&lt;/div&gt;
+&lt;p&gt;を示せれば、列または行のどの相異なる値も等しくないことになり題意を示せる。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\overline{a} \times \overline{p} = \overline{a} \times \overline{q}\)&lt;/span&gt; として矛盾を導く。演算に関して代表元のとり方によらないことはすでに確認したので、この仮定は &lt;span class="math"&gt;\(a \times p \equiv a \times q \mod n\)&lt;/span&gt; と言い換えても良い。移項して整理すると&lt;/p&gt;
+&lt;div class="math"&gt;$$a (p - q) \equiv 0 \mod n$$&lt;/div&gt;
+&lt;p&gt;であるがここで &lt;span class="math"&gt;\(n\)&lt;/span&gt; は素数なので &lt;span class="math"&gt;\(a\)&lt;/span&gt; または &lt;span class="math"&gt;\(p - q\)&lt;/span&gt; が &lt;span class="math"&gt;\(n\)&lt;/span&gt; で割り切れる。仮定 &lt;span class="math"&gt;\(\overline{a} \ne \overline{0}\)&lt;/span&gt; より &lt;span class="math"&gt;\(a\)&lt;/span&gt; は &lt;span class="math"&gt;\(n\)&lt;/span&gt; で割り切れないので &lt;span class="math"&gt;\(p - q\)&lt;/span&gt; が &lt;span class="math"&gt;\(n\)&lt;/span&gt; で割り切れる。つまり &lt;span class="math"&gt;\(p \equiv q \mod n\)&lt;/span&gt; より &lt;span class="math"&gt;\(\overline{p} = \overline{q}\)&lt;/span&gt; となり &lt;span class="math"&gt;\(\overline{p}\)&lt;/span&gt; と &lt;span class="math"&gt;\(\overline{q}\)&lt;/span&gt; が相異なるという仮定に矛盾する。&lt;/p&gt;
+&lt;p&gt;ここまでで &lt;span class="math"&gt;\(n\)&lt;/span&gt; が素数の場合に &lt;span class="math"&gt;\(\overline{a} \in \mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; に対して、すべての元をかけると &lt;span class="math"&gt;\(\mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; の値が 1 つずつ現れることがわかった。つまり、掛けると &lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt; になる元が存在することがわかった。この元のことを &lt;span class="math"&gt;\(\overline{a}\)&lt;/span&gt; の逆元といい &lt;span class="math"&gt;\(\overline{a}^{-1}\)&lt;/span&gt; とかく。&lt;/p&gt;
+&lt;p&gt;乗法の逆元は、ユークリッドの互除法により効率よく得られることが知られている。&lt;/p&gt;
+&lt;p&gt;なお &lt;span class="math"&gt;\(n\)&lt;/span&gt; が合成数の場合にも、零因子を除けば逆元が存在する。例えば &lt;span class="math"&gt;\(n = 6\)&lt;/span&gt; の場合に &lt;span class="math"&gt;\(\overline{5}^{-1} = \overline{5}\)&lt;/span&gt; など。零因子ではない (&lt;span class="math"&gt;\(n\)&lt;/span&gt; と互いに素) であることを利用して &lt;span class="math"&gt;\(n\)&lt;/span&gt; が素数の場合と同じ論法で証明できる。または有限集合の単射は全単射であることからも示せる。&lt;/p&gt;
+&lt;h2 id="matome"&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;法 &lt;span class="math"&gt;\(n\)&lt;/span&gt; が素数の場合は、乗法の逆元が存在する、すなわち割り算が可能であるとわかった。&lt;/p&gt;
+&lt;h2 id="yu tan"&gt;余談&lt;/h2&gt;
+&lt;p&gt;以下で脱線する。&lt;/p&gt;
+&lt;p&gt;とても大雑把に言うと、四則演算が自由にできる (ただし &lt;span class="math"&gt;\(0\)&lt;/span&gt; による除算を除く) 代数的構造を体という。つまり素数 &lt;span class="math"&gt;\(n\)&lt;/span&gt; を法とした剰余による同値関係を入れた商集合は体である。無限集合であった整数環に制限を加えて有限集合にしたことにより演算の自由度が増し、体となった。整数同士の割り算を付け加えて有理数体に拡張するのとは異なるアプローチであり、面白い。なお、有理数体は &lt;span class="math"&gt;\(E = \mathbb{Z} \times \left(\mathbb{Z} - \{0\}\right)\)&lt;/span&gt; を考えるとき&lt;/p&gt;
+&lt;div class="math"&gt;$$(a, b), (c, d) \in E$$&lt;/div&gt;
+&lt;p&gt;に対して&lt;/p&gt;
+&lt;div class="math"&gt;$$(a, b) \sim (c, d) \Leftrightarrow a \times d = b \times c$$&lt;/div&gt;
+&lt;p&gt;という同値関係、つまり、比が等しいものを同じとみなす同値関係を入れて商集合を考えて&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbb{Q} = E / \sim$$&lt;/div&gt;
+&lt;p&gt;これを有理数体とする、という方針で構成する。自然に演算が定義できる (well-defined) ことも確かめられる。&lt;/p&gt;
+&lt;p&gt;実数体 &lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt; の構成はこれらとは全く異なるアプローチを取る。&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係に演算を導入する</title><link href="/20190812.html" rel="alternate"></link><published>2019-08-12T00:00:00+09:00</published><updated>2019-08-12T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-12:/20190812.html</id><summary type="html">&lt;p&gt;剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="./20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を参照してください。&lt;/p&gt;
+&lt;h2 id="ji hao nozhun bei"&gt;記号の準備&lt;/h2&gt;
 &lt;p&gt;整数環 &lt;span class="math"&gt;\(\mathbb{Z}\)&lt;/span&gt; とその &lt;span class="math"&gt;\(0\)&lt;/span&gt; でない元 &lt;span class="math"&gt;\(n \in \mathbb{Z}\)&lt;/span&gt; を一つ取る。同値関係を &lt;span class="math"&gt;\(a, b \in \mathbb{Z}\)&lt;/span&gt; に対して &lt;span class="math"&gt;\( a \equiv b \mod n\)&lt;/span&gt; と定めると、同値類は全部で &lt;span class="math"&gt;\(n\)&lt;/span&gt; 個あり&lt;/p&gt;
 &lt;div class="math"&gt;$$C(0), C(1), \ldots, C(n-1)$$&lt;/div&gt;
 &lt;p&gt;であるが、簡単のため&lt;/p&gt;
