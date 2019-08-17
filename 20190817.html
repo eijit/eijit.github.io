@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="eijit" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Residual, Mathematics, " />
+
+<meta property="og:title" content="オイラーの定理とフェルマーの小定理 "/>
+<meta property="og:url" content="/20190817.html" />
+<meta property="og:description" content="剰余の計算でしばしば有用なオイラーの定理とフェルマーの小定理について議論する" />
+<meta property="og:site_name" content="eijit&#39;s blog" />
+<meta property="og:article:author" content="eijit" />
+<meta property="og:article:published_time" content="2019-08-17T00:00:00+09:00" />
+<meta name="twitter:title" content="オイラーの定理とフェルマーの小定理 ">
+<meta name="twitter:description" content="剰余の計算でしばしば有用なオイラーの定理とフェルマーの小定理について議論する">
+
+        <title>オイラーの定理とフェルマーの小定理  · eijit&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
+
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>eijit's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories">Categories</a></li>
+                            <li ><a href="/tags">Tags</a></li>
+                            <li ><a href="/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/20190817.html"> オイラーの定理とフェルマーの小定理  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div id="toc"><ul><li><a class="toc-href" href="#" title="オイラーの定理とフェルマーの小定理">オイラーの定理とフェルマーの小定理</a><ul><li><a class="toc-href" href="#oiranoding li" title="オイラーの定理">オイラーの定理</a><ul><li><a class="toc-href" href="#li  \(n = 15\)" title="例 \(n = 15\)">例 \(n = 15\)</a></li></ul></li><li><a class="toc-href" href="#huerumanoxiao ding li_1" title="フェルマーの小定理">フェルマーの小定理</a></li><li><a class="toc-href" href="#kamaikerunoding li" title="カーマイケルの定理">カーマイケルの定理</a></li><li><a class="toc-href" href="#matome" title="まとめ">まとめ</a></li></ul></li></ul></div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            <p>ここまでの議論は</p>
+<ul>
+<li><a href="./20190811.html">同値関係</a></li>
+<li><a href="./20190812.html">剰余の同値関係に演算を導入する</a></li>
+<li><a href="./20190813.html">剰余の同値関係で乗法の逆元を考える</a></li>
+</ul>
+<p>を参照してください。</p>
+<h2 id="oiranoding li">オイラーの定理</h2>
+<p><span class="math">\(\mathbb{Z}/n\mathbb{Z}\)</span> で <span class="math">\(n\)</span> と互いに素な <span class="math">\(a \in \mathbb{Z}\)</span> を一つ取る。このとき <span class="math">\(\overline{a}\)</span> に自分自身を繰り返しかけると <span class="math">\(\overline{a}\)</span> は零因子ではないため、いつかは <span class="math">\(\overline{1}\)</span> になる。仮に <span class="math">\(\overline{1}\)</span> にならなかったとすると、べき乗したときの値の候補は有限であるため <span class="math">\(\overline{a}^k = \overline{a}^l\)</span> となる <span class="math">\(k, l \in \mathbb{Z}\)</span> が存在する。仮定より <span class="math">\(\overline{a}\)</span> の逆元が存在するので、両辺に <span class="math">\(\overline{a}^{-1}\)</span> を <span class="math">\(l\)</span> 回かけて <span class="math">\(\overline{a}^{k - l} = \overline{1}\)</span> となる。</p>
+<p>このように <span class="math">\(\overline{a}^k = \overline{1}\)</span> となる <span class="math">\(k\)</span> を <span class="math">\(\overline{a}\)</span> の位数という。</p>
+<p><span class="math">\(1\)</span> 以上 <span class="math">\(n\)</span> 以下の整数で <span class="math">\(n\)</span> と互いに素なものの個数を表す関数</p>
+<div class="math">$$\varphi\left(n\right) = \#\left\{ m \in \mathbb{N} | 1 \le m \le n, \gcd(m, n) = 1 \right\}$$</div>
+<p>をオイラー関数という。</p>
+<p><span class="math">\(n\)</span> と互いに素な <span class="math">\(a \in \mathbb{Z}\)</span> に対して</p>
+<div class="math">$$a^{\varphi\left(n\right)} \equiv 1 \mod(n)$$</div>
+<p>となり、これをオイラーの定理という。</p>
+<p>オイラー関数について</p>
+<ul>
+<li><span class="math">\(p\)</span> が素数のとき <span class="math">\(\varphi\left(p\right) = p - 1\)</span></li>
+<li><span class="math">\(p^m\)</span> で <span class="math">\(p\)</span> が素数のとき <span class="math">\(\varphi\left(p^m\right) = p^n - p^{n-1} = p^n (1 - 1/p)\)</span></li>
+<li><span class="math">\(l, m\)</span> が互いに素のとき <span class="math">\(\varphi\left(lm\right) = \varphi\left(l\right)\varphi\left(m\right)\)</span></li>
+</ul>
+<p>が成り立つ。したがって <span class="math">\(n\)</span> を割り切るすべての素数を <span class="math">\(\left\{p_1, p_2, \ldots, p_m\right\}\)</span> とすると</p>
+<div class="math">$$\varphi\left(n\right) = n \left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right)\dots\left(1 - \frac{1}{p_m}\right)$$</div>
+<p>となる。</p>
+<h3 id="li  \(n = 15\)">例 <span class="math">\(n = 15\)</span></h3>
+<p><span class="math">\(n = 15\)</span> とすると <span class="math">\(15 = 3 \times 5\)</span> より <span class="math">\(\varphi\left(15\right) = (3 - 1)(5 - 1) = 8\)</span> となる。実際に</p>
+<div class="math">$$2^8 = 256 = 17 \times 15 + 1 \equiv 1 \mod(15)$$</div>
+<p>となる。</p>
+<h2 id="huerumanoxiao ding li_1">フェルマーの小定理</h2>
+<p><span class="math">\(n = p\)</span> が素数の場合のオイラーの定理</p>
+<div class="math">$$a^{\varphi\left(p\right)} = a^{p - 1} \equiv 1 \mod(p)$$</div>
+<p>をフェルマーの小定理という。</p>
+<p>フェルマーの小定理の対偶は大きな数の素数判定に利用され、フェルマーテストと言われる。</p>
+<p><span class="math">\(n \in \mathbb{N}\)</span> が素数かどうか判定したい場合に以下の手順で確率的に素数の可能性が高い数を判定できる。</p>
+<ol>
+<li><span class="math">\(2 \le a &lt; n, a \in \mathbb{N}\)</span> を一つ選ぶ</li>
+<li><span class="math">\(\gcd(a, n) \ne 1\)</span> であれば <span class="math">\(n\)</span> は合成数となり終了</li>
+<li><span class="math">\(a ^ {n - 1} \not\equiv 1 \mod(n)\)</span> であれば <span class="math">\(n\)</span> は合成数となり終了</li>
+</ol>
+<p>上記の手順を繰り返しパスし続けることで素数の可能性が高まる。このテストは例えば RSA 暗号で大きな素数を生成する際に利用されることがある。</p>
+<h2 id="kamaikerunoding li">カーマイケルの定理</h2>
+<p>フェルマーテストにすべて通過する、つまり <span class="math">\(n\)</span> と互いに素な <span class="math">\(n\)</span> 以下の任意の自然数 <span class="math">\(a\)</span> に対して</p>
+<div class="math">$$a ^ {n - 1} \equiv 1 \mod(n)$$</div>
+<p>となる自然数が存在するとき、この <span class="math">\(n\)</span> をカーマイケル数という。カーマイケル数は <span class="math">\(561, 1105, 1729, \ldots\)</span> と無数に存在することが知られている。</p>
+<p>さて、ここでオイラーの定理の例の <span class="math">\(n = 15\)</span> に戻ろう。少し計算してみると</p>
+<ol>
+<li><span class="math">\(2^2 = 4\)</span></li>
+<li><span class="math">\(2^3 = 8\)</span></li>
+<li><span class="math">\(2^4 = 16 \equiv 1 \mod(15)\)</span></li>
+</ol>
+<p>と <span class="math">\(\varphi\left(15\right) = 8\)</span> よりも小さい指数でべき乗すると <span class="math">\(1\)</span> になるものが見つかった。オイラーの定理を改良し最小の指数を求める方法が知られている。</p>
+<p>ここでカーマイケル関数 <span class="math">\(\lambda(n)\)</span> を下記のように定義する。</p>
+<p><span class="math">\(n = 2^m\)</span> の場合は</p>
+<ol>
+<li><span class="math">\(m = 1\)</span> のときは <span class="math">\(\lambda(2^m) = 1\)</span></li>
+<li><span class="math">\(m = 2\)</span> のときは <span class="math">\(\lambda(2^m) = 2\)</span></li>
+<li><span class="math">\(m &gt; 2\)</span> のときは <span class="math">\(\lambda(2^m) = 2^{m - 2}\)</span></li>
+</ol>
+<p>と定義する。</p>
+<p><span class="math">\(n\)</span> が奇素数 <span class="math">\(p\)</span> に対して <span class="math">\(n = p^m\)</span> と書けるなら</p>
+<div class="math">$$\lambda(p^m) = p^{m-1} (p - 1)$$</div>
+<p>と定義する。</p>
+<p><span class="math">\(n = {p_1}^{m_1} {p_2}^{m_2} \dots {p_k}^{m_k}\)</span> と素因数分解されるなら</p>
+<div class="math">$$\lambda({p_1}^{m_1} {p_2}^{m_2} \dots {p_k}^{m_k}) = lcm \left\{\lambda\left({p_1}^{m_1}\right), \lambda\left({p_2}^{m_2}\right), \ldots, \lambda\left({p_k}^{m_k}\right)\right\}$$</div>
+<p>と定義する。ここで lcm は最小公倍数とする。このとき <span class="math">\(n\)</span> と互いに素な <span class="math">\(a\)</span> に対して</p>
+<div class="math">$$a ^ {\lambda(n)} \equiv 1 \mod(n)$$</div>
+<p>が成り立ち <span class="math">\(\lambda(n)\)</span> が最小の数となる。これをカーマイケルの定理という。</p>
+<p>実際に <span class="math">\(n = 15\)</span> に対して</p>
+<div class="math">$$\lambda(15) = lcm \left\{\lambda(3), \lambda(5)\right\} = lcm \left\{(3 - 1), (5 - 1) \right\} = 4$$</div>
+<p>となる。</p>
+<p>なお <span class="math">\(\lambda(n)\)</span> が <span class="math">\(n - 1\)</span> の約数であるとき <span class="math">\(n\)</span> はカーマイケル数となる。</p>
+<h2 id="matome">まとめ</h2>
+<p><span class="math">\(n\)</span> と互いに素な自然数 <span class="math">\(a\)</span> に対して、べき乗すると <span class="math">\(n\)</span> を法として <span class="math">\(1\)</span> と合同になる指数を具体的に求めるいくつかの方法を紹介しました。</p>
+<p>オイラーの定理で <span class="math">\(n\)</span> が素数の場合はフェルマーの小定理と呼ばれていること (歴史的にはフェルマーの小定理をオイラーが一般の場合に拡張した) と、オイラー関数を改良して最小の値を与えるカーマイケル関数を紹介しました。</p>
+<p>フェルマーの小定理は素数判定に利用される (フェルマーテスト) ことと、フェルマーテストをすべてすり抜ける擬素数がカーマイケル数と呼ばれていることを紹介しました。</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            <div>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-08-17T00:00:00+09:00"> 8月 17, 2019</time>
+        <h4>剰余計算</h4>
+    <ul class="multi-parts-list">
+            <li >
+            <a href="/20190811.html" title="同値関係">Part 1: 同値関係</a>
+            </li>
+            <li >
+            <a href="/20190812.html" title="剰余の同値関係に演算を導入する">Part 2: 剰余の同値関係に演算を導入する</a>
+            </li>
+            <li >
+            <a href="/20190813.html" title="剰余の同値関係で乗法の逆元を考える">Part 3: 剰余の同値関係で乗法の逆元を考える</a>
+            </li>
+            <li  class="active-part">
+            Part 4: オイラーの定理とフェルマーの小定理
+            </li>
+    </ul>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#mathematics-ref">Mathematics</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags#residual-ref">Residual
+                    <span>4</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://twitter.com/eijit" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://github.com/eijit" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://www.facebook.com/eiji.taniguchi.56" title="My Facebook Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-facebook sidebar-social-links"></i></a>
+    <a href="https://bookmeter.com/users/13752" title="My Bookmeter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-bookmeter sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>

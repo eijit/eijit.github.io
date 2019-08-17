@@ -1,5 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-08-13T00:00:00+09:00</updated><entry><title>剰余の同値関係で乗法の逆元を考える</title><link href="/20190813.html" rel="alternate"></link><published>2019-08-13T00:00:00+09:00</published><updated>2019-08-13T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-13:/20190813.html</id><summary type="html">&lt;p&gt;剰余の同値関係で除算について考察する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-08-17T00:00:00+09:00</updated><entry><title>オイラーの定理とフェルマーの小定理</title><link href="/20190817.html" rel="alternate"></link><published>2019-08-17T00:00:00+09:00</published><updated>2019-08-17T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-17:/20190817.html</id><summary type="html">&lt;p&gt;剰余の計算でしばしば有用なオイラーの定理とフェルマーの小定理について議論する&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="./20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="./20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="./20190813.html"&gt;剰余の同値関係で乗法の逆元を考える&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を参照してください。&lt;/p&gt;
+&lt;h2 id="oiranoding li"&gt;オイラーの定理&lt;/h2&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\mathbb{Z}/n\mathbb{Z}\)&lt;/span&gt; で &lt;span class="math"&gt;\(n\)&lt;/span&gt; と互いに素な &lt;span class="math"&gt;\(a \in \mathbb{Z}\)&lt;/span&gt; を一つ取る。このとき &lt;span class="math"&gt;\(\overline{a}\)&lt;/span&gt; に自分自身を繰り返しかけると &lt;span class="math"&gt;\(\overline{a}\)&lt;/span&gt; は零因子ではないため、いつかは &lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt; になる。仮に &lt;span class="math"&gt;\(\overline{1}\)&lt;/span&gt; にならなかったとすると、べき乗したときの値の候補は有限であるため &lt;span class="math"&gt;\(\overline{a}^k = \overline{a}^l\)&lt;/span&gt; となる &lt;span class="math"&gt;\(k, l \in \mathbb{Z}\)&lt;/span&gt; が存在する。仮定より &lt;span class="math"&gt;\(\overline{a}\)&lt;/span&gt; の逆元が存在するので、両辺に &lt;span class="math"&gt;\(\overline{a}^{-1}\)&lt;/span&gt; を &lt;span class="math"&gt;\(l\)&lt;/span&gt; 回かけて &lt;span class="math"&gt;\(\overline{a}^{k - l} = \overline{1}\)&lt;/span&gt; となる。&lt;/p&gt;
+&lt;p&gt;このように &lt;span class="math"&gt;\(\overline{a}^k = \overline{1}\)&lt;/span&gt; となる &lt;span class="math"&gt;\(k\)&lt;/span&gt; を &lt;span class="math"&gt;\(\overline{a}\)&lt;/span&gt; の位数という。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(1\)&lt;/span&gt; 以上 &lt;span class="math"&gt;\(n\)&lt;/span&gt; 以下の整数で &lt;span class="math"&gt;\(n\)&lt;/span&gt; と互いに素なものの個数を表す関数&lt;/p&gt;
+&lt;div class="math"&gt;$$\varphi\left(n\right) = \#\left\{ m \in \mathbb{N} | 1 \le m \le n, \gcd(m, n) = 1 \right\}$$&lt;/div&gt;
+&lt;p&gt;をオイラー関数という。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n\)&lt;/span&gt; と互いに素な &lt;span class="math"&gt;\(a \in \mathbb{Z}\)&lt;/span&gt; に対して&lt;/p&gt;
+&lt;div class="math"&gt;$$a^{\varphi\left(n\right)} \equiv 1 \mod(n)$$&lt;/div&gt;
+&lt;p&gt;となり、これをオイラーの定理という。&lt;/p&gt;
+&lt;p&gt;オイラー関数について&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(p\)&lt;/span&gt; が素数のとき &lt;span class="math"&gt;\(\varphi\left(p\right) = p - 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(p^m\)&lt;/span&gt; で &lt;span class="math"&gt;\(p\)&lt;/span&gt; が素数のとき &lt;span class="math"&gt;\(\varphi\left(p^m\right) = p^n - p^{n-1} = p^n (1 - 1/p)\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(l, m\)&lt;/span&gt; が互いに素のとき &lt;span class="math"&gt;\(\varphi\left(lm\right) = \varphi\left(l\right)\varphi\left(m\right)\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;が成り立つ。したがって &lt;span class="math"&gt;\(n\)&lt;/span&gt; を割り切るすべての素数を &lt;span class="math"&gt;\(\left\{p_1, p_2, \ldots, p_m\right\}\)&lt;/span&gt; とすると&lt;/p&gt;
+&lt;div class="math"&gt;$$\varphi\left(n\right) = n \left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right)\dots\left(1 - \frac{1}{p_m}\right)$$&lt;/div&gt;
+&lt;p&gt;となる。&lt;/p&gt;
+&lt;h3 id="li  \(n = 15\)"&gt;例 &lt;span class="math"&gt;\(n = 15\)&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n = 15\)&lt;/span&gt; とすると &lt;span class="math"&gt;\(15 = 3 \times 5\)&lt;/span&gt; より &lt;span class="math"&gt;\(\varphi\left(15\right) = (3 - 1)(5 - 1) = 8\)&lt;/span&gt; となる。実際に&lt;/p&gt;
+&lt;div class="math"&gt;$$2^8 = 256 = 17 \times 15 + 1 \equiv 1 \mod(15)$$&lt;/div&gt;
+&lt;p&gt;となる。&lt;/p&gt;
+&lt;h2 id="huerumanoxiao ding li_1"&gt;フェルマーの小定理&lt;/h2&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n = p\)&lt;/span&gt; が素数の場合のオイラーの定理&lt;/p&gt;
+&lt;div class="math"&gt;$$a^{\varphi\left(p\right)} = a^{p - 1} \equiv 1 \mod(p)$$&lt;/div&gt;
+&lt;p&gt;をフェルマーの小定理という。&lt;/p&gt;
+&lt;p&gt;フェルマーの小定理の対偶は大きな数の素数判定に利用され、フェルマーテストと言われる。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n \in \mathbb{N}\)&lt;/span&gt; が素数かどうか判定したい場合に以下の手順で確率的に素数の可能性が高い数を判定できる。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(2 \le a &amp;lt; n, a \in \mathbb{N}\)&lt;/span&gt; を一つ選ぶ&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\gcd(a, n) \ne 1\)&lt;/span&gt; であれば &lt;span class="math"&gt;\(n\)&lt;/span&gt; は合成数となり終了&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(a ^ {n - 1} \not\equiv 1 \mod(n)\)&lt;/span&gt; であれば &lt;span class="math"&gt;\(n\)&lt;/span&gt; は合成数となり終了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上記の手順を繰り返しパスし続けることで素数の可能性が高まる。このテストは例えば RSA 暗号で大きな素数を生成する際に利用されることがある。&lt;/p&gt;
+&lt;h2 id="kamaikerunoding li"&gt;カーマイケルの定理&lt;/h2&gt;
+&lt;p&gt;フェルマーテストにすべて通過する、つまり &lt;span class="math"&gt;\(n\)&lt;/span&gt; と互いに素な &lt;span class="math"&gt;\(n\)&lt;/span&gt; 以下の任意の自然数 &lt;span class="math"&gt;\(a\)&lt;/span&gt; に対して&lt;/p&gt;
+&lt;div class="math"&gt;$$a ^ {n - 1} \equiv 1 \mod(n)$$&lt;/div&gt;
+&lt;p&gt;となる自然数が存在するとき、この &lt;span class="math"&gt;\(n\)&lt;/span&gt; をカーマイケル数という。カーマイケル数は &lt;span class="math"&gt;\(561, 1105, 1729, \ldots\)&lt;/span&gt; と無数に存在することが知られている。&lt;/p&gt;
+&lt;p&gt;さて、ここでオイラーの定理の例の &lt;span class="math"&gt;\(n = 15\)&lt;/span&gt; に戻ろう。少し計算してみると&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(2^2 = 4\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(2^3 = 8\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(2^4 = 16 \equiv 1 \mod(15)\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;と &lt;span class="math"&gt;\(\varphi\left(15\right) = 8\)&lt;/span&gt; よりも小さい指数でべき乗すると &lt;span class="math"&gt;\(1\)&lt;/span&gt; になるものが見つかった。オイラーの定理を改良し最小の指数を求める方法が知られている。&lt;/p&gt;
+&lt;p&gt;ここでカーマイケル関数 &lt;span class="math"&gt;\(\lambda(n)\)&lt;/span&gt; を下記のように定義する。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n = 2^m\)&lt;/span&gt; の場合は&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(m = 1\)&lt;/span&gt; のときは &lt;span class="math"&gt;\(\lambda(2^m) = 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(m = 2\)&lt;/span&gt; のときは &lt;span class="math"&gt;\(\lambda(2^m) = 2\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(m &amp;gt; 2\)&lt;/span&gt; のときは &lt;span class="math"&gt;\(\lambda(2^m) = 2^{m - 2}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;と定義する。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n\)&lt;/span&gt; が奇素数 &lt;span class="math"&gt;\(p\)&lt;/span&gt; に対して &lt;span class="math"&gt;\(n = p^m\)&lt;/span&gt; と書けるなら&lt;/p&gt;
+&lt;div class="math"&gt;$$\lambda(p^m) = p^{m-1} (p - 1)$$&lt;/div&gt;
+&lt;p&gt;と定義する。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n = {p_1}^{m_1} {p_2}^{m_2} \dots {p_k}^{m_k}\)&lt;/span&gt; と素因数分解されるなら&lt;/p&gt;
+&lt;div class="math"&gt;$$\lambda({p_1}^{m_1} {p_2}^{m_2} \dots {p_k}^{m_k}) = lcm \left\{\lambda\left({p_1}^{m_1}\right), \lambda\left({p_2}^{m_2}\right), \ldots, \lambda\left({p_k}^{m_k}\right)\right\}$$&lt;/div&gt;
+&lt;p&gt;と定義する。ここで lcm は最小公倍数とする。このとき &lt;span class="math"&gt;\(n\)&lt;/span&gt; と互いに素な &lt;span class="math"&gt;\(a\)&lt;/span&gt; に対して&lt;/p&gt;
+&lt;div class="math"&gt;$$a ^ {\lambda(n)} \equiv 1 \mod(n)$$&lt;/div&gt;
+&lt;p&gt;が成り立ち &lt;span class="math"&gt;\(\lambda(n)\)&lt;/span&gt; が最小の数となる。これをカーマイケルの定理という。&lt;/p&gt;
+&lt;p&gt;実際に &lt;span class="math"&gt;\(n = 15\)&lt;/span&gt; に対して&lt;/p&gt;
+&lt;div class="math"&gt;$$\lambda(15) = lcm \left\{\lambda(3), \lambda(5)\right\} = lcm \left\{(3 - 1), (5 - 1) \right\} = 4$$&lt;/div&gt;
+&lt;p&gt;となる。&lt;/p&gt;
+&lt;p&gt;なお &lt;span class="math"&gt;\(\lambda(n)\)&lt;/span&gt; が &lt;span class="math"&gt;\(n - 1\)&lt;/span&gt; の約数であるとき &lt;span class="math"&gt;\(n\)&lt;/span&gt; はカーマイケル数となる。&lt;/p&gt;
+&lt;h2 id="matome"&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(n\)&lt;/span&gt; と互いに素な自然数 &lt;span class="math"&gt;\(a\)&lt;/span&gt; に対して、べき乗すると &lt;span class="math"&gt;\(n\)&lt;/span&gt; を法として &lt;span class="math"&gt;\(1\)&lt;/span&gt; と合同になる指数を具体的に求めるいくつかの方法を紹介しました。&lt;/p&gt;
+&lt;p&gt;オイラーの定理で &lt;span class="math"&gt;\(n\)&lt;/span&gt; が素数の場合はフェルマーの小定理と呼ばれていること (歴史的にはフェルマーの小定理をオイラーが一般の場合に拡張した) と、オイラー関数を改良して最小の値を与えるカーマイケル関数を紹介しました。&lt;/p&gt;
+&lt;p&gt;フェルマーの小定理は素数判定に利用される (フェルマーテスト) ことと、フェルマーテストをすべてすり抜ける擬素数がカーマイケル数と呼ばれていることを紹介しました。&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係で乗法の逆元を考える</title><link href="/20190813.html" rel="alternate"></link><published>2019-08-13T00:00:00+09:00</published><updated>2019-08-13T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-13:/20190813.html</id><summary type="html">&lt;p&gt;剰余の同値関係で除算について考察する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="./20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="./20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
