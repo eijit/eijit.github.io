@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-08-18T00:00:00+09:00</updated><entry><title>AtCoder Beginner Contest 138 参加</title><link href="/20190818.html" rel="alternate"></link><published>2019-08-18T00:00:00+09:00</published><updated>2019-08-18T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-18:/20190818.html</id><summary type="html">&lt;p&gt;ABCD の四完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/abc138"&gt;AtCoder Beginner Contest 138&lt;/a&gt; に参加した。今回は ABCD 4 完答 の 1978 位でパフォーマンスは 958 だった。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-08-19T00:00:00+09:00</updated><entry><title>WinDbg のインストール方法</title><link href="/20190819.html" rel="alternate"></link><published>2019-08-19T00:00:00+09:00</published><updated>2019-08-19T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-19:/20190819.html</id><summary type="html">&lt;p&gt;WinDbg のインストール方法と簡単な使い方を紹介する&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://docs.microsoft.com/ja-jp/windows-hardware/drivers/debugger/debugger-download-tools"&gt;Debugging Tools for Windows のダウンロード&lt;/a&gt; より&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.microsoft.com/store/p/windbg/9pgjgd53tn86"&gt;WinDbg Preview&lt;/a&gt;: Windows Store Apps 形式で提供される、新しいバージョンの WinDbg&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk"&gt;WinDbg&lt;/a&gt;: 従来の WinDbg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;の 2 種類が提供されていますが、内部で利用しているエンジンは同じであり、利用できる機能に差異はないようです。&lt;/p&gt;
+&lt;h2 id="windbg preview"&gt;WinDbg Preview&lt;/h2&gt;
+&lt;p&gt;Microsoft Store のアプリケーションで WinDbg Preview を検索してインストールします。インストールに成功してそのまま起動すると下記のようなアプリが現れます。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WinDbg Preview" src="/images/20190819_WinDbgPreview.png"/&gt;&lt;/p&gt;
+&lt;h2 id="windbg"&gt;WinDbg&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk"&gt;Windows 10 SDK&lt;/a&gt; から "DOWNLOAD THE INSTALLER" で winsdksetup.exe をダウンロードします。インストールの途中でコンポーネントを選択でき、このとき Debugging Tools for Windows だけにチェックを入れればダウンロードするファイルサイズを抑えられます。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WinDbg Installer" src="/images/20190819_WinDbgInstaller.png"/&gt;&lt;/p&gt;
+&lt;p&gt;そのまま進めればインストールが終了し、スタートメニューに WinDbg (X86) や WinDbg (X64) が表示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WinDbg (X64)" src="/images/20190819_WinDbgX64.png"/&gt;&lt;/p&gt;
+&lt;h2 id="shi qian zhun bei"&gt;事前準備&lt;/h2&gt;
+&lt;h3 id="apurikuratsushiyushi nizi dong de nimemoridanpuwosheng cheng suru"&gt;アプリクラッシュ時に自動的にメモリダンプを生成する&lt;/h3&gt;
+&lt;p&gt;手元で容易に再現できる不具合の場合は、ログを埋めてデバッグを進めたり、統合開発環境を利用して直接的にデバッグを行ったりするでしょう。手元で容易に再現できないようなアプリクラッシュの不具合は、再現時にできるだけ多くの情報を残すことが肝要です。その際にメモリダンプ (*.dmp) ファイルがあれば、クラッシュ時の状況を WinDbg などを用いて詳しく調べることができます。&lt;/p&gt;
+&lt;p&gt;以下で、アプリケーションがクラッシュした際に自動的にメモリダンプを生成する設定を行いますが、レジストリの変更を伴うため内容を理解した上で実施してください。また、実施の際はレジストリのバックアップを取っておくことをおすすめします。&lt;/p&gt;
+&lt;p&gt;Windows Key + R を押し「ファイル名を指定して実行」で regedit と入力して OK をクリックし、レジストリエディタを起動します。以下のように値を設定します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;場所: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps&lt;ul&gt;
+&lt;li&gt;LocalDumps が存在しない場合は、新規 -&amp;gt; キーで作成します&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;値の名前: DumpFolder&lt;ul&gt;
+&lt;li&gt;種類: REG_EXPAND_SZ&lt;/li&gt;
+&lt;li&gt;値のデータ: %LOCALAPPDATA%\CrashDumps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;値の名前: DumpCount&lt;ul&gt;
+&lt;li&gt;種類: REG_DWORD&lt;/li&gt;
+&lt;li&gt;値のデータ: 0xa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;値の名前: DumpType&lt;ul&gt;
+&lt;li&gt;種類: REG_DWORD&lt;/li&gt;
+&lt;li&gt;値のデータ: 0x2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="LocalDumps" src="/images/20190819_LocalDumps.png"/&gt;&lt;/p&gt;
+&lt;p&gt;regedit で編集する代わりに&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps]
+"DumpFolder"=hex(2):25,00,4c,00,4f,00,43,00,41,00,4c,00,41,00,50,00,50,00,44,\
+  00,41,00,54,00,41,00,25,00,5c,00,43,00,72,00,61,00,73,00,68,00,44,00,75,00,\
+  6d,00,70,00,73,00,00,00
+"DumpCount"=dword:0000000a
+"DumpType"=dword:00000002
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;の内容をテキストエディタに貼り付けて、拡張子 reg のファイルで保存し、そのファイルを選択して右クリックして「結合」を選択することでも同様の内容を適用できます。&lt;/p&gt;
+&lt;p&gt;ここで設定した値の詳細については &lt;a href="https://docs.microsoft.com/ja-jp/windows/win32/wer/wer-settings"&gt;WER Settings&lt;/a&gt; を参照してください。&lt;/p&gt;
+&lt;h3 id="apurikuratsushiyushi nomemoridanpuwojie xi shitemiru"&gt;アプリクラッシュ時のメモリダンプを解析してみる&lt;/h3&gt;
+&lt;p&gt;メモリダンプ自動取得の動作確認として &lt;a href="https://github.com/eijit/WinDbgSamples"&gt;WinDbgSamples&lt;/a&gt; の SimpleCrash をビルドして実行すると &lt;code&gt;%LOCALAPPDATA%\CrashDumps&lt;/code&gt; に &lt;code&gt;SimpleCrash.exe.1152.dmp&lt;/code&gt; のようなファイルが生成されているはずです。&lt;/p&gt;
+&lt;p&gt;このファイルを WinDbg で開き、下部の &lt;code&gt;0:000&amp;gt;&lt;/code&gt; の部分に &lt;code&gt;.ecxr&lt;/code&gt; と入力して Enter を押すと、右のペインにアプリクラッシュ時のコンテキストが、左のペインにソースコードの該当行が表示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SimpleCrash" src="/images/20190819_SimpleCrash.png"/&gt;&lt;/p&gt;
+&lt;h2 id="matome_1"&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2 種類の WinDbg のインストール方法を紹介しました&lt;/li&gt;
+&lt;li&gt;アプリクラッシュ時にメモリダンプを自動的に取得する設定方法を紹介しました&lt;/li&gt;
+&lt;li&gt;実際にアプリをクラッシュさせて WinDbg で解析できることを確認しました&lt;/li&gt;
+&lt;/ul&gt;</content><category term="WinDbg"></category></entry><entry><title>AtCoder Beginner Contest 138 参加</title><link href="/20190818.html" rel="alternate"></link><published>2019-08-18T00:00:00+09:00</published><updated>2019-08-18T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-18:/20190818.html</id><summary type="html">&lt;p&gt;ABCD の四完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/abc138"&gt;AtCoder Beginner Contest 138&lt;/a&gt; に参加した。今回は ABCD 4 完答 の 1978 位でパフォーマンスは 958 だった。&lt;/p&gt;
 &lt;p&gt;以下のコードは PyPy3 (2.4.0) と C++14 (GCC 5.4.1) で AC を確認している。&lt;/p&gt;
 &lt;h2 id="wen ti  a"&gt;問題 A&lt;/h2&gt;
 &lt;p&gt;入力の &lt;span class="math"&gt;\(a\)&lt;/span&gt; が &lt;span class="math"&gt;\(3200\)&lt;/span&gt; 以上かどうかで出力を変える問題なので、そのまま実装した。&lt;/p&gt;
