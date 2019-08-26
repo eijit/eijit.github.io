@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-08-24T00:00:00+09:00</updated><entry><title>第一回日本最強プログラマー学生選手権-予選- 参加</title><link href="/20190824.html" rel="alternate"></link><published>2019-08-24T00:00:00+09:00</published><updated>2019-08-24T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-24:/20190824.html</id><summary type="html">&lt;p&gt;AB の 2 完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/jsc2019-qual"&gt;第一回日本最強プログラマー学生選手権-予選-&lt;/a&gt; に参加した。今回は AB 2 完答 の 1385 位でパフォーマンスは 1160 だった。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="http://localhost:8000/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-08-24T00:00:00+09:00</updated><entry><title>第一回日本最強プログラマー学生選手権-予選- 参加</title><link href="/20190824.html" rel="alternate"></link><published>2019-08-24T00:00:00+09:00</published><updated>2019-08-24T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-24:/20190824.html</id><summary type="html">&lt;p&gt;AB の 2 完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/jsc2019-qual"&gt;第一回日本最強プログラマー学生選手権-予選-&lt;/a&gt; に参加した。今回は AB 2 完答 の 1385 位でパフォーマンスは 1160 だった。&lt;/p&gt;
 &lt;p&gt;以下のコードは PyPy3 (2.4.0) で AC を確認している。&lt;/p&gt;
 &lt;h2 id="wen ti  a"&gt;問題 A&lt;/h2&gt;
 &lt;p&gt;与えられた &lt;span class="math"&gt;\(M, D\)&lt;/span&gt; を全探索して条件を満足するものを数え上げた。 1 を数えないように注意した。&lt;/p&gt;
@@ -30,16 +30,16 @@
 \begin{bmatrix}
 a_1 = 1\\
 a_2 = 4\\
-a_3 = 2\\
-a_4 = 3\\
+a_3 = 3\\
+a_4 = 2\\
 a_5 = 1\\
 a_6 = 4\\
-a_7 = 2\\
-a_8 = 3\\
+a_7 = 3\\
+a_8 = 2\\
 a_9 = 1\\
 a_{10} = 4\\
-a_{11} = 2\\
-a_{12} = 3\\
+a_{11} = 3\\
+a_{12} = 2\\
 \end{bmatrix}
 $$&lt;/div&gt;
 &lt;p&gt;について&lt;/p&gt;
@@ -51,14 +51,14 @@ $$&lt;/div&gt;
 &lt;p&gt;で合計 12 回転倒する。同様に &lt;span class="math"&gt;\(3\)&lt;/span&gt; についても &lt;span class="math"&gt;\(2\)&lt;/span&gt; と転倒しているので、合計で 6 回転倒する。&lt;/p&gt;
 &lt;p&gt;次に左側の要素と転倒しているものについて考える。 &lt;span class="math"&gt;\(4\)&lt;/span&gt; は &lt;span class="math"&gt;\(1\)&lt;/span&gt; と転倒しているので&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(a_6\)&lt;/span&gt;: &lt;span class="math"&gt;\(2 \times 1\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(a_{10}\)&lt;/span&gt;: &lt;span class="math"&gt;\(1 \times 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(a_2\)&lt;/span&gt;: &lt;span class="math"&gt;\(2 \times 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(a_6\)&lt;/span&gt;: &lt;span class="math"&gt;\(1 \times 1\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;で合計 3 回転倒する。同様に &lt;span class="math"&gt;\(3, 2\)&lt;/span&gt; についても &lt;span class="math"&gt;\(1\)&lt;/span&gt; とそれぞれ &lt;span class="math"&gt;\(3\)&lt;/span&gt; 回転倒する。&lt;/p&gt;
 &lt;p&gt;ここまでを合計すると &lt;span class="math"&gt;\(12 + 6 + 3 + 3 + 3 = 27\)&lt;/span&gt; となる。右側で転倒する要素同士と、左側で転倒する要素同士は、繰り返す回数について平等なので、計算をまとめて&lt;/p&gt;
 &lt;div class="math"&gt;$$(2 + 1) \times 3 \times (3 + 1) / 2 + (1 + 1 + 1) \times (3 - 1) \times 3 / 2 = 27$$&lt;/div&gt;
 &lt;p&gt;と考えると良い。&lt;/p&gt;
-&lt;p&gt;下記のコードでは、右側で転倒する要素の個数を intra で、左側で転倒する要素の個数を inter とした。&lt;/p&gt;
+&lt;p&gt;下記のコードでは、右側で転倒する要素の個数を intra とし、左側で転倒する要素の個数を inter とした。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# PyPy3 (2.4.0)&lt;/span&gt;
 &lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;()))&lt;/span&gt;
@@ -80,11 +80,54 @@ $$&lt;/div&gt;
 &lt;span class="n"&gt;ans&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inter&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;mod&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;コンテスト後に転倒数といえば BIT (Binary Indexed Tree) というコメントを見かけたので勉強した。&lt;/p&gt;
+&lt;p&gt;転倒数や BIT については&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ikatakos.com/pot/programming_algorithm/data_structure/binary_indexed_tree"&gt;Binary Indexed Tree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ikatakos.com/pot/programming_algorithm/dynamic_programming/inversion"&gt;転倒数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://hos.ac/slides/20140319_bit.pdf"&gt;Binary Indexed Tree のはなし&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;がとても参考になった。特に最後の資料は BIT の図解があって理解が進んで応用しやすいと感じた。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# PyPy3 (2.4.0)&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Bit&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;ret&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+        &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;ret&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+            &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ret&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+            &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;
+
+&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="n"&gt;bit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Bit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;intra&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;())):&lt;/span&gt;
+    &lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;intra&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;inter&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;mod&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;
+&lt;span class="n"&gt;ans&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;intra&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;mod&lt;/span&gt;
+&lt;span class="n"&gt;ans&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inter&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;mod&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;intra は自分より右側で転倒する要素、つまり A 内でのみ転倒する要素なので、通常の転倒数の求め方でよい。一方で inter に関しては、ある要素を追加したときに自分より左側にある (値が小さい) 要素を数え上げれば良いと理解した。&lt;/p&gt;
+&lt;p&gt;計算量のオーダーが &lt;span class="math"&gt;\(O\left(N^2\right)\)&lt;/span&gt; から &lt;span class="math"&gt;\(O\left(N \log\left(N\right)\right)\)&lt;/span&gt; に落ちており、実際に実行時間も短くなっていた。今回の要素数だと全探索でも TLE にならなかったが、別の問題では役に立つ場面も出てくると期待したい。&lt;/p&gt;
 &lt;h2 id="wen ti  c"&gt;問題 C&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;反転回数の偶奇に制限があること&lt;/li&gt;
 &lt;li&gt;両端が &lt;code&gt;W&lt;/code&gt; だと反転する機会が一度のため &lt;code&gt;W&lt;/code&gt; にできないこと&lt;/li&gt;
-&lt;li&gt;並べ替えの順番は問わないので、一つの解につき &lt;span class="math"&gt;\(N!\)&lt;/span&gt; 通りの別解があること。&lt;/li&gt;
+&lt;li&gt;並べ替えの順番は問わないので、一つの解につき &lt;span class="math"&gt;\(N!\)&lt;/span&gt; 通りの別解があること&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;などは解って、具体例を色々と触っていたがそれ以上は何も思い浮かばずに終了した。&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -373,9 +416,9 @@ $$&lt;/div&gt;
 }
 &lt;/script&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>オイラーの定理とフェルマーの小定理</title><link href="/20190817.html" rel="alternate"></link><published>2019-08-17T00:00:00+09:00</published><updated>2019-08-17T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-17:/20190817.html</id><summary type="html">&lt;p&gt;剰余の計算でしばしば有用なオイラーの定理とフェルマーの小定理について議論する&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="./20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="./20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="./20190813.html"&gt;剰余の同値関係で乗法の逆元を考える&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/20190813.html"&gt;剰余の同値関係で乗法の逆元を考える&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id="oiranoding li"&gt;オイラーの定理&lt;/h2&gt;
@@ -509,8 +552,8 @@ $$&lt;/div&gt;
 }
 &lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係で乗法の逆元を考える</title><link href="/20190813.html" rel="alternate"></link><published>2019-08-13T00:00:00+09:00</published><updated>2019-08-13T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-13:/20190813.html</id><summary type="html">&lt;p&gt;剰余の同値関係で除算について考察する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="./20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="./20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id="li woguan cha suru"&gt;例を観察する&lt;/h2&gt;
@@ -773,7 +816,7 @@ $$&lt;/div&gt;
 }
 &lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係に演算を導入する</title><link href="/20190812.html" rel="alternate"></link><published>2019-08-12T00:00:00+09:00</published><updated>2019-08-12T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-12:/20190812.html</id><summary type="html">&lt;p&gt;剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="./20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id="ji hao nozhun bei"&gt;記号の準備&lt;/h2&gt;

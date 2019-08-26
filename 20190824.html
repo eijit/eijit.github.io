@@ -29,7 +29,7 @@
         <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
         <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
         <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
-        <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
+        <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
 
 
 
@@ -48,6 +48,8 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
                             <li ><a href="">Home</a></li>
+                            <li ><a href="/pages/about.html">About</a></li>
+                            <li ><a href="/pages/favorite-texts.html">Favorite Texts</a></li>
                             <li ><a href="/categories">Categories</a></li>
                             <li ><a href="/tags">Tags</a></li>
                             <li ><a href="/archives">Archives</a></li>
@@ -109,16 +111,16 @@
 \begin{bmatrix}
 a_1 = 1\\
 a_2 = 4\\
-a_3 = 2\\
-a_4 = 3\\
+a_3 = 3\\
+a_4 = 2\\
 a_5 = 1\\
 a_6 = 4\\
-a_7 = 2\\
-a_8 = 3\\
+a_7 = 3\\
+a_8 = 2\\
 a_9 = 1\\
 a_{10} = 4\\
-a_{11} = 2\\
-a_{12} = 3\\
+a_{11} = 3\\
+a_{12} = 2\\
 \end{bmatrix}
 $$</div>
 <p>について</p>
@@ -130,14 +132,14 @@ $$</div>
 <p>で合計 12 回転倒する。同様に <span class="math">\(3\)</span> についても <span class="math">\(2\)</span> と転倒しているので、合計で 6 回転倒する。</p>
 <p>次に左側の要素と転倒しているものについて考える。 <span class="math">\(4\)</span> は <span class="math">\(1\)</span> と転倒しているので</p>
 <ul>
-<li><span class="math">\(a_6\)</span>: <span class="math">\(2 \times 1\)</span></li>
-<li><span class="math">\(a_{10}\)</span>: <span class="math">\(1 \times 1\)</span></li>
+<li><span class="math">\(a_2\)</span>: <span class="math">\(2 \times 1\)</span></li>
+<li><span class="math">\(a_6\)</span>: <span class="math">\(1 \times 1\)</span></li>
 </ul>
 <p>で合計 3 回転倒する。同様に <span class="math">\(3, 2\)</span> についても <span class="math">\(1\)</span> とそれぞれ <span class="math">\(3\)</span> 回転倒する。</p>
 <p>ここまでを合計すると <span class="math">\(12 + 6 + 3 + 3 + 3 = 27\)</span> となる。右側で転倒する要素同士と、左側で転倒する要素同士は、繰り返す回数について平等なので、計算をまとめて</p>
 <div class="math">$$(2 + 1) \times 3 \times (3 + 1) / 2 + (1 + 1 + 1) \times (3 - 1) \times 3 / 2 = 27$$</div>
 <p>と考えると良い。</p>
-<p>下記のコードでは、右側で転倒する要素の個数を intra で、左側で転倒する要素の個数を inter とした。</p>
+<p>下記のコードでは、右側で転倒する要素の個数を intra とし、左側で転倒する要素の個数を inter とした。</p>
 <div class="highlight"><pre><span></span><span class="c1"># PyPy3 (2.4.0)</span>
 <span class="n">N</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 <span class="n">A</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
@@ -159,11 +161,54 @@ $$</div>
 <span class="n">ans</span> <span class="o">+=</span> <span class="p">(</span><span class="n">inter</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
 <span class="k">print</span><span class="p">(</span><span class="n">ans</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
 </pre></div>
+<p>コンテスト後に転倒数といえば BIT (Binary Indexed Tree) というコメントを見かけたので勉強した。</p>
+<p>転倒数や BIT については</p>
+<ul>
+<li><a href="https://ikatakos.com/pot/programming_algorithm/data_structure/binary_indexed_tree">Binary Indexed Tree</a></li>
+<li><a href="https://ikatakos.com/pot/programming_algorithm/dynamic_programming/inversion">転倒数</a></li>
+<li><a href="http://hos.ac/slides/20140319_bit.pdf">Binary Indexed Tree のはなし</a></li>
+</ul>
+<p>がとても参考になった。特に最後の資料は BIT の図解があって理解が進んで応用しやすいと感じた。</p>
+<div class="highlight"><pre><span></span><span class="c1"># PyPy3 (2.4.0)</span>
+<span class="k">class</span> <span class="nc">Bit</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ret</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="n">i</span> <span class="o">&amp;</span> <span class="o">-</span><span class="n">i</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">&amp;</span> <span class="o">-</span><span class="n">i</span>
+
+<span class="n">N</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+<span class="n">bit</span> <span class="o">=</span> <span class="n">Bit</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="n">intra</span><span class="p">,</span> <span class="n">inter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())):</span>
+    <span class="n">bit</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">intra</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">bit</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">inter</span> <span class="o">+=</span> <span class="n">bit</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">7</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">intra</span> <span class="o">*</span> <span class="n">K</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
+<span class="n">ans</span> <span class="o">+=</span> <span class="p">(</span><span class="n">inter</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ans</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
+</pre></div>
+<p>intra は自分より右側で転倒する要素、つまり A 内でのみ転倒する要素なので、通常の転倒数の求め方でよい。一方で inter に関しては、ある要素を追加したときに自分より左側にある (値が小さい) 要素を数え上げれば良いと理解した。</p>
+<p>計算量のオーダーが <span class="math">\(O\left(N^2\right)\)</span> から <span class="math">\(O\left(N \log\left(N\right)\right)\)</span> に落ちており、実際に実行時間も短くなっていた。今回の要素数だと全探索でも TLE にならなかったが、別の問題では役に立つ場面も出てくると期待したい。</p>
 <h2 id="wen ti  c">問題 C</h2>
 <ul>
 <li>反転回数の偶奇に制限があること</li>
 <li>両端が <code>W</code> だと反転する機会が一度のため <code>W</code> にできないこと</li>
-<li>並べ替えの順番は問わないので、一つの解につき <span class="math">\(N!\)</span> 通りの別解があること。</li>
+<li>並べ替えの順番は問わないので、一つの解につき <span class="math">\(N!\)</span> 通りの別解があること</li>
 </ul>
 <p>などは解って、具体例を色々と触っていたがそれ以上は何も思い浮かばずに終了した。</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
