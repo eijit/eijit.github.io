@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-08-29T00:00:00+09:00</updated><entry><title>今日の一問 (2019/08/20 - 08/22)</title><link href="/20190829.html" rel="alternate"></link><published>2019-08-29T00:00:00+09:00</published><updated>2019-08-29T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-29:/20190829.html</id><summary type="html">&lt;p&gt;ABC026-C, ABC112-C, ARC001-B を解いた&lt;/p&gt;</summary><content type="html">&lt;p&gt;今日の一問を解いた。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="https://eijit.github.io/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>https://eijit.github.io/</id><updated>2019-08-29T00:00:00+09:00</updated><entry><title>今日の一問 (2019/08/20 - 08/22)</title><link href="https://eijit.github.io/20190829.html" rel="alternate"></link><published>2019-08-29T00:00:00+09:00</published><updated>2019-08-29T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-29:/20190829.html</id><summary type="html">&lt;p&gt;ABC026-C, ABC112-C, ARC001-B を解いた&lt;/p&gt;</summary><content type="html">&lt;p&gt;今日の一問を解いた。&lt;/p&gt;
 &lt;p&gt;以下のコードは PyPy3 (2.4.0), C++14 (GCC 5.4.1) で AC を確認している。&lt;/p&gt;
 &lt;h2 id="2019/08/20 abc026-c"&gt;2019/08/20 &lt;a href="https://atcoder.jp/contests/abc026/tasks/abc026_c"&gt;ABC026-C&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
@@ -116,7 +116,7 @@
 
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>第一回日本最強プログラマー学生選手権-予選- 参加</title><link href="/20190824.html" rel="alternate"></link><published>2019-08-24T00:00:00+09:00</published><updated>2019-08-24T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-24:/20190824.html</id><summary type="html">&lt;p&gt;AB の 2 完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/jsc2019-qual"&gt;第一回日本最強プログラマー学生選手権-予選-&lt;/a&gt; に参加した。今回は AB 2 完答 の 1385 位でパフォーマンスは 1160 だった。&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>第一回日本最強プログラマー学生選手権-予選- 参加</title><link href="https://eijit.github.io/20190824.html" rel="alternate"></link><published>2019-08-24T00:00:00+09:00</published><updated>2019-08-24T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-24:/20190824.html</id><summary type="html">&lt;p&gt;AB の 2 完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/jsc2019-qual"&gt;第一回日本最強プログラマー学生選手権-予選-&lt;/a&gt; に参加した。今回は AB 2 完答 の 1385 位でパフォーマンスは 1160 だった。&lt;/p&gt;
 &lt;p&gt;以下のコードは PyPy3 (2.4.0) で AC を確認している。&lt;/p&gt;
 &lt;h2 id="wen ti  a"&gt;問題 A&lt;/h2&gt;
 &lt;p&gt;与えられた &lt;span class="math"&gt;\(M, D\)&lt;/span&gt; を全探索して条件を満足するものを数え上げた。 1 を数えないように注意した。&lt;/p&gt;
@@ -307,7 +307,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>WinDbg のインストール方法</title><link href="/20190819.html" rel="alternate"></link><published>2019-08-19T00:00:00+09:00</published><updated>2019-08-19T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-19:/20190819.html</id><summary type="html">&lt;p&gt;WinDbg のインストール方法と簡単な使い方を紹介する&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://docs.microsoft.com/ja-jp/windows-hardware/drivers/debugger/debugger-download-tools"&gt;Debugging Tools for Windows のダウンロード&lt;/a&gt; より&lt;/p&gt;
+&lt;/script&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>WinDbg のインストール方法</title><link href="https://eijit.github.io/20190819.html" rel="alternate"></link><published>2019-08-19T00:00:00+09:00</published><updated>2019-08-19T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-19:/20190819.html</id><summary type="html">&lt;p&gt;WinDbg のインストール方法と簡単な使い方を紹介する&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://docs.microsoft.com/ja-jp/windows-hardware/drivers/debugger/debugger-download-tools"&gt;Debugging Tools for Windows のダウンロード&lt;/a&gt; より&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.microsoft.com/store/p/windbg/9pgjgd53tn86"&gt;WinDbg Preview&lt;/a&gt;: Windows Store Apps 形式で提供される、新しいバージョンの WinDbg&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk"&gt;WinDbg&lt;/a&gt;: 従来の WinDbg&lt;/li&gt;
@@ -315,12 +315,12 @@ $$&lt;/div&gt;
 &lt;p&gt;の 2 種類が提供されていますが、内部で利用しているエンジンは同じであり、利用できる機能に差異はないようです。&lt;/p&gt;
 &lt;h2 id="windbg preview"&gt;WinDbg Preview&lt;/h2&gt;
 &lt;p&gt;Microsoft Store のアプリケーションで WinDbg Preview を検索してインストールします。インストールに成功してそのまま起動すると下記のようなアプリが現れます。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="WinDbg Preview" src="/images/20190819_WinDbgPreview.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WinDbg Preview" src="https://eijit.github.io/images/20190819_WinDbgPreview.png"/&gt;&lt;/p&gt;
 &lt;h2 id="windbg"&gt;WinDbg&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk"&gt;Windows 10 SDK&lt;/a&gt; から "DOWNLOAD THE INSTALLER" で winsdksetup.exe をダウンロードします。インストールの途中でコンポーネントを選択でき、このとき Debugging Tools for Windows だけにチェックを入れればダウンロードするファイルサイズを抑えられます。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="WinDbg Installer" src="/images/20190819_WinDbgInstaller.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WinDbg Installer" src="https://eijit.github.io/images/20190819_WinDbgInstaller.png"/&gt;&lt;/p&gt;
 &lt;p&gt;そのまま進めればインストールが終了し、スタートメニューに WinDbg (X86) や WinDbg (X64) が表示されます。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="WinDbg (X64)" src="/images/20190819_WinDbgX64.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WinDbg (X64)" src="https://eijit.github.io/images/20190819_WinDbgX64.png"/&gt;&lt;/p&gt;
 &lt;h2 id="shi qian zhun bei"&gt;事前準備&lt;/h2&gt;
 &lt;h3 id="apurikuratsushiyushi nizi dong de nimemoridanpuwosheng cheng suru"&gt;アプリクラッシュ時に自動的にメモリダンプを生成する&lt;/h3&gt;
 &lt;p&gt;手元で容易に再現できる不具合の場合は、ログを埋めてデバッグを進めたり、統合開発環境を利用して直接的にデバッグを行ったりするでしょう。手元で容易に再現できないようなアプリクラッシュの不具合は、再現時にできるだけ多くの情報を残すことが肝要です。その際にメモリダンプ (*.dmp) ファイルがあれば、クラッシュ時の状況を WinDbg などを用いて詳しく調べることができます。&lt;/p&gt;
@@ -347,7 +347,7 @@ $$&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="LocalDumps" src="/images/20190819_LocalDumps.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="LocalDumps" src="https://eijit.github.io/images/20190819_LocalDumps.png"/&gt;&lt;/p&gt;
 &lt;p&gt;regedit で編集する代わりに&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Windows Registry Editor Version 5.00
 
@@ -363,13 +363,13 @@ $$&lt;/div&gt;
 &lt;h3 id="apurikuratsushiyushi nomemoridanpuwojie xi shitemiru"&gt;アプリクラッシュ時のメモリダンプを解析してみる&lt;/h3&gt;
 &lt;p&gt;メモリダンプ自動取得の動作確認として &lt;a href="https://github.com/eijit/WinDbgSamples"&gt;WinDbgSamples&lt;/a&gt; の SimpleCrash をビルドして実行すると &lt;code&gt;%LOCALAPPDATA%\CrashDumps&lt;/code&gt; に &lt;code&gt;SimpleCrash.exe.1152.dmp&lt;/code&gt; のようなファイルが生成されているはずです。&lt;/p&gt;
 &lt;p&gt;このファイルを WinDbg で開き、下部の &lt;code&gt;0:000&amp;gt;&lt;/code&gt; の部分に &lt;code&gt;.ecxr&lt;/code&gt; と入力して Enter を押すと、右のペインにアプリクラッシュ時のコンテキストが、左のペインにソースコードの該当行が表示されます。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="SimpleCrash" src="/images/20190819_SimpleCrash.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SimpleCrash" src="https://eijit.github.io/images/20190819_SimpleCrash.png"/&gt;&lt;/p&gt;
 &lt;h2 id="matome_1"&gt;まとめ&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;2 種類の WinDbg のインストール方法を紹介しました&lt;/li&gt;
 &lt;li&gt;アプリクラッシュ時にメモリダンプを自動的に取得する設定方法を紹介しました&lt;/li&gt;
 &lt;li&gt;実際にアプリをクラッシュさせて WinDbg で解析できることを確認しました&lt;/li&gt;
-&lt;/ul&gt;</content><category term="WinDbg"></category></entry><entry><title>AtCoder Beginner Contest 138 参加</title><link href="/20190818.html" rel="alternate"></link><published>2019-08-18T00:00:00+09:00</published><updated>2019-08-18T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-18:/20190818.html</id><summary type="html">&lt;p&gt;ABCD の四完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/abc138"&gt;AtCoder Beginner Contest 138&lt;/a&gt; に参加した。今回は ABCD 4 完答 の 1978 位でパフォーマンスは 958 だった。&lt;/p&gt;
+&lt;/ul&gt;</content><category term="WinDbg"></category></entry><entry><title>AtCoder Beginner Contest 138 参加</title><link href="https://eijit.github.io/20190818.html" rel="alternate"></link><published>2019-08-18T00:00:00+09:00</published><updated>2019-08-18T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-18:/20190818.html</id><summary type="html">&lt;p&gt;ABCD の四完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/abc138"&gt;AtCoder Beginner Contest 138&lt;/a&gt; に参加した。今回は ABCD 4 完答 の 1978 位でパフォーマンスは 958 だった。&lt;/p&gt;
 &lt;p&gt;以下のコードは PyPy3 (2.4.0) と C++14 (GCC 5.4.1) で AC を確認している。&lt;/p&gt;
 &lt;p&gt;※ (2019/08/23) 問題 D の回答は正しくなかったので修正した。&lt;/p&gt;
 &lt;h2 id="wen ti  a"&gt;問題 A&lt;/h2&gt;
@@ -531,11 +531,11 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>オイラーの定理とフェルマーの小定理</title><link href="/20190817.html" rel="alternate"></link><published>2019-08-17T00:00:00+09:00</published><updated>2019-08-17T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-17:/20190817.html</id><summary type="html">&lt;p&gt;剰余の計算でしばしば有用なオイラーの定理とフェルマーの小定理について議論する&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
+&lt;/script&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>オイラーの定理とフェルマーの小定理</title><link href="https://eijit.github.io/20190817.html" rel="alternate"></link><published>2019-08-17T00:00:00+09:00</published><updated>2019-08-17T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-17:/20190817.html</id><summary type="html">&lt;p&gt;剰余の計算でしばしば有用なオイラーの定理とフェルマーの小定理について議論する&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/20190813.html"&gt;剰余の同値関係で乗法の逆元を考える&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://eijit.github.io/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://eijit.github.io/20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://eijit.github.io/20190813.html"&gt;剰余の同値関係で乗法の逆元を考える&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id="oiranoding li"&gt;オイラーの定理&lt;/h2&gt;
@@ -667,10 +667,10 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係で乗法の逆元を考える</title><link href="/20190813.html" rel="alternate"></link><published>2019-08-13T00:00:00+09:00</published><updated>2019-08-13T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-13:/20190813.html</id><summary type="html">&lt;p&gt;剰余の同値関係で除算について考察する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
+&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係で乗法の逆元を考える</title><link href="https://eijit.github.io/20190813.html" rel="alternate"></link><published>2019-08-13T00:00:00+09:00</published><updated>2019-08-13T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-13:/20190813.html</id><summary type="html">&lt;p&gt;剰余の同値関係で除算について考察する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://eijit.github.io/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://eijit.github.io/20190812.html"&gt;剰余の同値関係に演算を導入する&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id="li woguan cha suru"&gt;例を観察する&lt;/h2&gt;
@@ -931,9 +931,9 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係に演算を導入する</title><link href="/20190812.html" rel="alternate"></link><published>2019-08-12T00:00:00+09:00</published><updated>2019-08-12T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-12:/20190812.html</id><summary type="html">&lt;p&gt;剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
+&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>剰余の同値関係に演算を導入する</title><link href="https://eijit.github.io/20190812.html" rel="alternate"></link><published>2019-08-12T00:00:00+09:00</published><updated>2019-08-12T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-12:/20190812.html</id><summary type="html">&lt;p&gt;剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここまでの議論は&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://eijit.github.io/20190811.html"&gt;同値関係&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id="ji hao nozhun bei"&gt;記号の準備&lt;/h2&gt;
@@ -1028,7 +1028,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>同値関係</title><link href="/20190811.html" rel="alternate"></link><published>2019-08-11T00:00:00+09:00</published><updated>2019-08-11T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-11:/20190811.html</id><summary type="html">&lt;p&gt;剰余計算の基礎となる同値関係について&lt;/p&gt;</summary><content type="html">&lt;h2 id="hazimeni"&gt;はじめに&lt;/h2&gt;
+&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>同値関係</title><link href="https://eijit.github.io/20190811.html" rel="alternate"></link><published>2019-08-11T00:00:00+09:00</published><updated>2019-08-11T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-11:/20190811.html</id><summary type="html">&lt;p&gt;剰余計算の基礎となる同値関係について&lt;/p&gt;</summary><content type="html">&lt;h2 id="hazimeni"&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;プログラミングではしばしば剰余計算 (割った余りの計算) が出てくる。このとき、やって良い操作と良くない操作の区別をつけたり、効率よく計算を行ったりするために、背景にある理屈を学ぶことは有用と思う。&lt;/p&gt;
 &lt;h2 id="tong zhi guan xi"&gt;同値関係&lt;/h2&gt;
 &lt;p&gt;まずは剰余計算で利用する "等しい" の意味を定める。ただし、剰余計算よりも一般的な場合を扱う。&lt;/p&gt;
@@ -1119,7 +1119,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>AtCoder Beginner Contest 137 参加</title><link href="/20190810.html" rel="alternate"></link><published>2019-08-10T00:00:00+09:00</published><updated>2019-08-10T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2019-08-10:/20190810.html</id><summary type="html">&lt;p&gt;ABC の三完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/abc137"&gt;AtCoder Beginner Contest 137&lt;/a&gt; に参加した。今回は ABC 3 完答 の 1885 位でパフォーマンスは 974 だった。&lt;/p&gt;
+&lt;/script&gt;</content><category term="Residual"></category></entry><entry><title>AtCoder Beginner Contest 137 参加</title><link href="https://eijit.github.io/20190810.html" rel="alternate"></link><published>2019-08-10T00:00:00+09:00</published><updated>2019-08-10T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2019-08-10:/20190810.html</id><summary type="html">&lt;p&gt;ABC の三完答&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://atcoder.jp/contests/abc137"&gt;AtCoder Beginner Contest 137&lt;/a&gt; に参加した。今回は ABC 3 完答 の 1885 位でパフォーマンスは 974 だった。&lt;/p&gt;
 &lt;p&gt;以下のコードは PyPy3 (2.4.0) で AC を確認している。&lt;/p&gt;
 &lt;h2 id="wen ti  a"&gt;問題 A&lt;/h2&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(A + B, A - B, A \times B\)&lt;/span&gt; の最大値を表示せよという問題なので、そのまま計算した。&lt;/p&gt;
@@ -1275,7 +1275,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>バイバイマンを数えてみた</title><link href="/20160219.html" rel="alternate"></link><published>2016-02-19T00:00:00+09:00</published><updated>2016-02-19T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2016-02-19:/20160219.html</id><summary type="html">&lt;p&gt;バイバイマンを数えように挑戦してみた&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://codeiq.jp/q/2593"&gt;バイバイマンを数えよう&lt;/a&gt; に挑戦してみました。コードゴルフは初めてでしたが Python で 51B (&lt;a href="http://d.hatena.ne.jp/Ozy/20160202"&gt;eijit&lt;/a&gt;) と一位までもう少しのところまで行きました。試行錯誤しながら迷走して面白かったので記録を残しておこうと思います。&lt;/p&gt;
+&lt;/script&gt;</content><category term="AtCoder"></category><category term="ProgrammingContest"></category></entry><entry><title>バイバイマンを数えてみた</title><link href="https://eijit.github.io/20160219.html" rel="alternate"></link><published>2016-02-19T00:00:00+09:00</published><updated>2016-02-19T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2016-02-19:/20160219.html</id><summary type="html">&lt;p&gt;バイバイマンを数えように挑戦してみた&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://codeiq.jp/q/2593"&gt;バイバイマンを数えよう&lt;/a&gt; に挑戦してみました。コードゴルフは初めてでしたが Python で 51B (&lt;a href="http://d.hatena.ne.jp/Ozy/20160202"&gt;eijit&lt;/a&gt;) と一位までもう少しのところまで行きました。試行錯誤しながら迷走して面白かったので記録を残しておこうと思います。&lt;/p&gt;
 &lt;h1 id="su po naarugorizumu"&gt;素朴なアルゴリズム&lt;/h1&gt;
 &lt;h2 id="wen ti wojie xi suru 1"&gt;問題を解析する 1&lt;/h2&gt;
 &lt;p&gt;バイバイマンの増え方が想像しにくい場合は &lt;a href="http://d.hatena.ne.jp/Ozy/20160131"&gt;バイバイマンの増え方&lt;/a&gt; もあわせてご覧ください。&lt;/p&gt;
@@ -1609,7 +1609,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Code Golf"></category></entry><entry><title>rotate_left_shift(x, 1) - x の最適化</title><link href="/20140207.html" rel="alternate"></link><published>2014-02-07T00:00:00+09:00</published><updated>2014-02-07T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:None,2014-02-07:/20140207.html</id><summary type="html">&lt;p&gt;rotate_left_shift(x, 1) - x の最適化&lt;/p&gt;</summary><content type="html">&lt;p&gt;uint32_t x に対して掲題の計算を行いたい。&lt;/p&gt;
+&lt;/script&gt;</content><category term="Code Golf"></category></entry><entry><title>rotate_left_shift(x, 1) - x の最適化</title><link href="https://eijit.github.io/20140207.html" rel="alternate"></link><published>2014-02-07T00:00:00+09:00</published><updated>2014-02-07T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2014-02-07:/20140207.html</id><summary type="html">&lt;p&gt;rotate_left_shift(x, 1) - x の最適化&lt;/p&gt;</summary><content type="html">&lt;p&gt;uint32_t x に対して掲題の計算を行いたい。&lt;/p&gt;
 &lt;p&gt;rotate shift 命令のないプロセッサの場合は&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
