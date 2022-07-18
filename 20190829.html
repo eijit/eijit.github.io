@@ -12,7 +12,7 @@
 <meta name="keywords" content="AtCoder, ProgrammingContest, Programming, " />
 
 <meta property="og:title" content="今日の一問 (2019/08/20 - 08/22) "/>
-<meta property="og:url" content="/20190829.html" />
+<meta property="og:url" content="https://eijit.github.io/20190829.html" />
 <meta property="og:description" content="ABC026-C, ABC112-C, ARC001-B を解いた" />
 <meta property="og:site_name" content="eijit&#39;s blog" />
 <meta property="og:article:author" content="eijit" />
@@ -24,11 +24,11 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/custom.css" media="screen">
         <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
 
 
@@ -44,16 +44,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="/"><span class=site-name>eijit's blog</span></a>
+                    <a class="brand" href="https://eijit.github.io/"><span class=site-name>eijit's blog</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
-                            <li ><a href="">Home</a></li>
-                            <li ><a href="/pages/about.html">About</a></li>
-                            <li ><a href="/pages/favorite-sentences.html">Favorite Sentences</a></li>
-                            <li ><a href="/categories">Categories</a></li>
-                            <li ><a href="/tags">Tags</a></li>
-                            <li ><a href="/archives">Archives</a></li>
-                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            <li ><a href="https://eijit.github.io">Home</a></li>
+                            <li ><a href="https://eijit.github.io/pages/about.html">About</a></li>
+                            <li ><a href="https://eijit.github.io/categories">Categories</a></li>
+                            <li ><a href="https://eijit.github.io/tags">Tags</a></li>
+                            <li ><a href="https://eijit.github.io/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="https://eijit.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +65,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="/20190829.html"> 今日の一問 (2019/08/20 - 08/22)  </a></h1>
+    <h1><a href="https://eijit.github.io/20190829.html"> 今日の一問 (2019/08/20 - 08/22)  </a></h1>
     </header>
 </div>
 
@@ -89,7 +88,7 @@
 <li>給料計算関数に高橋君 (社員番号 1) を与える</li>
 </ul>
 <p>として解いた。</p>
-<div class="highlight"><pre><span></span><span class="c1"># PyPy3 (2.4.0)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyPy3 (2.4.0)</span>
 <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="n">B</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -112,92 +111,92 @@
     <span class="k">return</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">ans</span> <span class="o">=</span> <span class="n">salary</span><span class="p">(</span><span class="n">relation</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="2019/08/21 abc112-c">2019/08/21 <a href="https://atcoder.jp/contests/abc112/tasks/abc112_c">ABC112-C</a></h2>
 <p>以前に Python で解いていたが、幸いなことに解法を忘れていたので新鮮な気持ちで取り組めた。賢い方法がわからなかったので、力技で全探索した。解いたあとで前回の Python の回答を見たら全探索だった。</p>
-<div class="highlight"><pre><span></span><span class="c1">// C++14 (GCC 5.4.1)</span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// C++14 (GCC 5.4.1)</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">N</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span><span class="p">;</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">X</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">H</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">X</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="w"> </span><span class="n">Y</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="w"> </span><span class="n">H</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">101</span><span class="p">;</span> <span class="o">++</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">101</span><span class="p">;</span> <span class="o">++</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">bool</span> <span class="n">found</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="kt">long</span> <span class="kt">long</span> <span class="n">h</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">continue</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="c1">// 一つ候補を見つけて高さの基準にする</span>
-                <span class="n">h</span> <span class="o">=</span> <span class="n">H</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// 一つ候補を見つけて高さの基準にする</span>
+<span class="w">                </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
 
-            <span class="c1">// すべての高さが矛盾しないものを見つける</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">h_candidate</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">),</span> <span class="mi">0ll</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">!=</span> <span class="n">h_candidate</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">found</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">printf</span><span class="p">(</span><span class="s">"%d %d %lld</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">);</span>
-                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">            </span><span class="c1">// すべての高さが矛盾しないものを見つける</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">h_candidate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="mf">0l</span><span class="n">l</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">h_candidate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d %d %lld</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="2019/08/22 arc001-b">2019/08/22 <a href="https://atcoder.jp/contests/arc001/tasks/arc001_2">ARC001-B</a></h2>
 <p>これも賢い方法を思いつかなかったので、差が 10 度未満になるまで 10 度で調整して、残りはベタ書きした。</p>
-<div class="highlight"><pre><span></span><span class="c1">// C++14 (GCC 5.4.1)</span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// C++14 (GCC 5.4.1)</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">A</span> <span class="o">&gt;&gt;</span> <span class="n">B</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">const</span> <span class="kt">int</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="n">B</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
 
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">remain</span> <span class="o">=</span> <span class="n">diff</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">remain</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">const</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">remain</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
-        <span class="n">remain</span> <span class="o">-=</span> <span class="n">count</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">remain</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">remain</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">remain</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">||</span> <span class="n">remain</span> <span class="o">==</span> <span class="mi">7</span> <span class="o">||</span> <span class="n">remain</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">remain</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">||</span> <span class="n">remain</span> <span class="o">==</span> <span class="mi">6</span> <span class="o">||</span> <span class="n">remain</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">remain</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">remain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diff</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">remain</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remain</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">remain</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">remain</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">remain</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">remain</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">remain</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">remain</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">remain</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">remain</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">remain</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">remain</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="p">);</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
             <div>
 </div>
 
@@ -208,15 +207,15 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-08-29T00:00:00+09:00"> 8月 29, 2019</time>
+            <time itemprop="dateCreated" datetime="2019-08-29T00:00:00+09:00">Aug 29, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#programming-ref">Programming</a>
+            <a class="category-link" href="https://eijit.github.io/categories.html#programming-ref">Programming</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags#atcoder-ref">AtCoder
+                <li><a href="https://eijit.github.io/tags#atcoder-ref">AtCoder
                     <span>7</span>
 </a></li>
-                <li><a href="/tags#programmingcontest-ref">ProgrammingContest
+                <li><a href="https://eijit.github.io/tags#programmingcontest-ref">ProgrammingContest
                     <span>7</span>
 </a></li>
             </ul>
@@ -225,8 +224,6 @@
     <i class="fa fa-twitter sidebar-social-links"></i></a>
     <a href="https://github.com/eijit" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-github sidebar-social-links"></i></a>
-    <a href="https://www.facebook.com/eiji.taniguchi.56" title="My Facebook Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-facebook sidebar-social-links"></i></a>
     <a href="https://bookmeter.com/users/13752" title="My Bookmeter Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-bookmeter sidebar-social-links"></i></a>
         </div>

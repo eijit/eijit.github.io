@@ -12,7 +12,7 @@
 <meta name="keywords" content="AtCoder, ProgrammingContest, Programming, " />
 
 <meta property="og:title" content="第一回日本最強プログラマー学生選手権-予選- 参加 "/>
-<meta property="og:url" content="/20190824.html" />
+<meta property="og:url" content="https://eijit.github.io/20190824.html" />
 <meta property="og:description" content="AB の 2 完答" />
 <meta property="og:site_name" content="eijit&#39;s blog" />
 <meta property="og:article:author" content="eijit" />
@@ -24,11 +24,11 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/custom.css" media="screen">
         <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
 
 
@@ -44,16 +44,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="/"><span class=site-name>eijit's blog</span></a>
+                    <a class="brand" href="https://eijit.github.io/"><span class=site-name>eijit's blog</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
-                            <li ><a href="">Home</a></li>
-                            <li ><a href="/pages/about.html">About</a></li>
-                            <li ><a href="/pages/favorite-sentences.html">Favorite Sentences</a></li>
-                            <li ><a href="/categories">Categories</a></li>
-                            <li ><a href="/tags">Tags</a></li>
-                            <li ><a href="/archives">Archives</a></li>
-                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            <li ><a href="https://eijit.github.io">Home</a></li>
+                            <li ><a href="https://eijit.github.io/pages/about.html">About</a></li>
+                            <li ><a href="https://eijit.github.io/categories">Categories</a></li>
+                            <li ><a href="https://eijit.github.io/tags">Tags</a></li>
+                            <li ><a href="https://eijit.github.io/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="https://eijit.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +65,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="/20190824.html"> 第一回日本最強プログラマー学生選手権-予選- 参加  </a></h1>
+    <h1><a href="https://eijit.github.io/20190824.html"> 第一回日本最強プログラマー学生選手権-予選- 参加  </a></h1>
     </header>
 </div>
 
@@ -84,7 +83,7 @@
 <p>以下のコードは PyPy3 (2.4.0) で AC を確認している。</p>
 <h2 id="wen ti  a">問題 A</h2>
 <p>与えられた <span class="math">\(M, D\)</span> を全探索して条件を満足するものを数え上げた。 1 を数えないように注意した。</p>
-<div class="highlight"><pre><span></span><span class="c1"># PyPy3 (2.4.0)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyPy3 (2.4.0)</span>
 <span class="n">M</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">mul_day</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
@@ -101,8 +100,8 @@
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">mul_day</span><span class="p">(</span><span class="n">j</span><span class="p">):</span>
             <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="wen ti  b">問題 B</h2>
 <p><span class="math">\(A\)</span> 内で自分より右側の要素と転倒していると <span class="math">\(K, K - 1, \ldots, 1\)</span> 回転倒するので、合計で <span class="math">\(K \times (K + 1) / 2\)</span> 回転倒する。対して <span class="math">\(A\)</span> 内で自分より左側の要素と転倒していると <span class="math">\(K - 1, K - 2, \ldots, 1\)</span> 回転倒するので、合計で <span class="math">\((K - 1) \times K / 2\)</span> 回転倒する。</p>
 <p>具体例として <span class="math">\(N = 4, K = 3, A = (1, 4, 3, 2)\)</span> の場合を考える。</p>
@@ -140,7 +139,7 @@ $$</div>
 <div class="math">$$(2 + 1) \times 3 \times (3 + 1) / 2 + (1 + 1 + 1) \times (3 - 1) \times 3 / 2 = 27$$</div>
 <p>と考えると良い。</p>
 <p>下記のコードでは、右側で転倒する要素の個数を intra とし、左側で転倒する要素の個数を inter とした。</p>
-<div class="highlight"><pre><span></span><span class="c1"># PyPy3 (2.4.0)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyPy3 (2.4.0)</span>
 <span class="n">N</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 <span class="n">A</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
 
@@ -159,8 +158,8 @@ $$</div>
 
 <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">intra</span> <span class="o">*</span> <span class="n">K</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
 <span class="n">ans</span> <span class="o">+=</span> <span class="p">(</span><span class="n">inter</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
-<span class="k">print</span><span class="p">(</span><span class="n">ans</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">ans</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
+</code></pre></div>
 <p>コンテスト後に転倒数といえば BIT (Binary Indexed Tree) というコメントを見かけたので勉強した。</p>
 <p>転倒数や BIT については</p>
 <ul>
@@ -169,7 +168,7 @@ $$</div>
 <li><a href="http://hos.ac/slides/20140319_bit.pdf">Binary Indexed Tree のはなし</a></li>
 </ul>
 <p>がとても参考になった。特に最後の資料は BIT の図解があって理解が進んで応用しやすいと感じた。</p>
-<div class="highlight"><pre><span></span><span class="c1"># PyPy3 (2.4.0)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyPy3 (2.4.0)</span>
 <span class="k">class</span> <span class="nc">Bit</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">n</span>
@@ -200,8 +199,8 @@ $$</div>
 <span class="n">mod</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">7</span>
 <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">intra</span> <span class="o">*</span> <span class="n">K</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
 <span class="n">ans</span> <span class="o">+=</span> <span class="p">(</span><span class="n">inter</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
-<span class="k">print</span><span class="p">(</span><span class="n">ans</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">ans</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
+</code></pre></div>
 <p>intra は自分より右側で転倒する要素、つまり A 内でのみ転倒する要素なので、通常の転倒数の求め方でよい。一方で inter に関しては、ある要素を追加したときに自分より左側にある (値が小さい) 要素を数え上げれば良いと理解した。</p>
 <p>計算量のオーダーが <span class="math">\(O\left(N^2\right)\)</span> から <span class="math">\(O\left(N \log\left(N\right)\right)\)</span> に落ちており、実際に実行時間も短くなっていた。今回の要素数だと全探索でも TLE にならなかったが、別の問題では役に立つ場面も出てくると期待したい。</p>
 <h2 id="wen ti  c">問題 C</h2>
@@ -246,7 +245,8 @@ $$</div>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        fonts: [['STIX', 'TeX']]," +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -282,15 +282,15 @@ $$</div>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-08-24T00:00:00+09:00"> 8月 24, 2019</time>
+            <time itemprop="dateCreated" datetime="2019-08-24T00:00:00+09:00">Aug 24, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#programming-ref">Programming</a>
+            <a class="category-link" href="https://eijit.github.io/categories.html#programming-ref">Programming</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags#atcoder-ref">AtCoder
+                <li><a href="https://eijit.github.io/tags#atcoder-ref">AtCoder
                     <span>7</span>
 </a></li>
-                <li><a href="/tags#programmingcontest-ref">ProgrammingContest
+                <li><a href="https://eijit.github.io/tags#programmingcontest-ref">ProgrammingContest
                     <span>7</span>
 </a></li>
             </ul>
@@ -299,8 +299,6 @@ $$</div>
     <i class="fa fa-twitter sidebar-social-links"></i></a>
     <a href="https://github.com/eijit" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-github sidebar-social-links"></i></a>
-    <a href="https://www.facebook.com/eiji.taniguchi.56" title="My Facebook Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-facebook sidebar-social-links"></i></a>
     <a href="https://bookmeter.com/users/13752" title="My Bookmeter Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-bookmeter sidebar-social-links"></i></a>
         </div>

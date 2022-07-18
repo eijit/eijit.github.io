@@ -9,18 +9,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Residual, Mathematics, " />
+<meta name="keywords" content="GCD, Mathematics, " />
 
-<meta property="og:title" content="剰余の同値関係に演算を導入する "/>
-<meta property="og:url" content="https://eijit.github.io/20190812.html" />
-<meta property="og:description" content="剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。" />
+<meta property="og:title" content="ラメの定理 "/>
+<meta property="og:url" content="https://eijit.github.io/20220718.html" />
+<meta property="og:description" content="Lame の定理の照明" />
 <meta property="og:site_name" content="eijit&#39;s blog" />
 <meta property="og:article:author" content="eijit" />
-<meta property="og:article:published_time" content="2019-08-12T00:00:00+09:00" />
-<meta name="twitter:title" content="剰余の同値関係に演算を導入する ">
-<meta name="twitter:description" content="剰余の同値関係に四則演算 (除算は後ほど) を導入し、演算が安全であることを確認する。">
+<meta property="og:article:published_time" content="2022-07-18T00:00:00+09:00" />
+<meta name="twitter:title" content="ラメの定理 ">
+<meta name="twitter:description" content="Lame の定理の照明">
 
-        <title>剰余の同値関係に演算を導入する  · eijit&#39;s blog
+        <title>ラメの定理  · eijit&#39;s blog
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -65,7 +65,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="https://eijit.github.io/20190812.html"> 剰余の同値関係に演算を導入する  </a></h1>
+    <h1><a href="https://eijit.github.io/20220718.html"> ラメの定理  </a></h1>
     </header>
 </div>
 
@@ -73,49 +73,90 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#" title="剰余の同値関係に演算を導入する">剰余の同値関係に演算を導入する</a><ul><li><a class="toc-href" href="#ji hao nozhun bei" title="記号の準備">記号の準備</a></li><li><a class="toc-href" href="#yan suan nodao ru" title="演算の導入">演算の導入</a><ul><li><a class="toc-href" href="#jia fa noque ren" title="加法の確認">加法の確認</a></li><li><a class="toc-href" href="#cheng fa noque ren" title="乗法の確認">乗法の確認</a></li></ul></li><li><a class="toc-href" href="#matome_1" title="まとめ">まとめ</a></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#" title="ラメの定理">ラメの定理</a><ul><li><a class="toc-href" href="#hazimeni" title="はじめに">はじめに</a></li><li><a class="toc-href" href="#zhun bei" title="準備">準備</a></li><li><a class="toc-href" href="#ding li" title="定理">定理</a><ul><li><a class="toc-href" href="#zheng ming" title="証明">証明</a></li></ul></li><li><a class="toc-href" href="#can kao wen xian_1" title="参考文献">参考文献</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <p>ここまでの議論は</p>
+            <h2 id="hazimeni">はじめに</h2>
+<p>ラメの定理 (Lame's theorem) はユークリッドの互除法による最大公約数 (GCD, Greatest Common Divisor) の計算に関して、必要なステップ数を評価する定理である。</p>
+<p><a href="https://www.fq.math.ca/Scanned/2-2/thoro.pdf">THE EUCLIDEAN ALGORITHM II</a> に定理のステートメントと証明が記載されているので、行間を補いつつ、紹介する。</p>
+<h2 id="zhun bei">準備</h2>
+<p>自然数 <span class="math">\(s, t \left( s \geq t \right)\)</span> に対して GCD の計算に必要な割り算の回数が <span class="math">\(n\)</span> であるとする。</p>
 <ul>
-<li><a href="https://eijit.github.io/20190811.html">同値関係</a></li>
+<li>(1) <span class="math">\(s     = t     q_{1} + r_{1}, 0 &lt; r_{1} &lt; t\)</span></li>
+<li>(2) <span class="math">\(t     = r_{1} q_{2} + r_{2}, 0 &lt; r_{2} &lt; r_{1}\)</span></li>
+<li>(3) <span class="math">\(r_{1} = r_{2} q_{3} + r_{3}, 0 &lt; r_{3} &lt; r_{2}\)</span></li>
+<li>(4) <span class="math">\(r_{2} = r_{3} q_{4} + r_{4}, 0 &lt; r_{4} &lt; r_{3}\)</span></li>
+<li>(5) <span class="math">\(r_{3} = r_{4} q_{5} + r_{5}, 0 &lt; r_{5} &lt; r_{4}\)</span></li>
+<li><span class="math">\(\ldots\)</span></li>
+<li>(n-1) <span class="math">\(r_{n-3} = r_{n-2} q_{n-1} + r_{n-1}, 0 &lt; r_{n-1} &lt; r_{n-2}\)</span></li>
+<li>(n) <span class="math">\(r_{n-2} = r_{n-1} q_{n} + 0\)</span></li>
 </ul>
-<p>を参照してください。</p>
-<h2 id="ji hao nozhun bei">記号の準備</h2>
-<p>整数環 <span class="math">\(\mathbb{Z}\)</span> とその <span class="math">\(0\)</span> でない元 <span class="math">\(n \in \mathbb{Z}\)</span> を一つ取る。同値関係を <span class="math">\(a, b \in \mathbb{Z}\)</span> に対して <span class="math">\( a \equiv b \mod n\)</span> と定めると、同値類は全部で <span class="math">\(n\)</span> 個あり</p>
-<div class="math">$$C(0), C(1), \ldots, C(n-1)$$</div>
-<p>であるが、簡単のため</p>
-<div class="math">$$\overline{0}, \overline{1}, \ldots, \overline{n-1}$$</div>
-<p>と書くことにする。</p>
-<p>また商集合を</p>
-<div class="math">$$\mathbb{Z}/n\mathbb{Z}$$</div>
-<p>と書くことにする。</p>
-<h2 id="yan suan nodao ru">演算の導入</h2>
-<p>この同値類の間にも整数と同様の自然な演算が定義できると望ましい。例えば <span class="math">\(n = 7\)</span> としたときに <span class="math">\(9, 16 \in \overline{2}\)</span> と <span class="math">\(3, 17 \in \overline{3}\)</span> に対して</p>
-<div class="math">$$9 + 3 = 12 \equiv 5 \mod 7$$</div>
-<div class="math">$$16 + 17 = 33 \equiv 5 \mod 7$$</div>
-<p>と同値類のどの元に対してもうまく演算できるように見える。このことを代表元のとり方によらない、という。</p>
-<h3 id="jia fa noque ren">加法の確認</h3>
-<p><span class="math">\(\overline{p}, \overline{q} \in \mathbb{Z}/n\mathbb{Z}\)</span> に対して、加法 <span class="math">\(+\)</span> を</p>
-<div class="math">$$\overline{p} + \overline{q} = \overline{p + q}$$</div>
-<p>と定める。このとき加法が代表元のとり方によらないことを示す。</p>
-<p>任意の <span class="math">\(a \in \overline{p}, b \in \overline{q}\)</span> に対して <span class="math">\(a = r \times n + p, b = s \times n + q\)</span> となる <span class="math">\(r, s \in \mathbb{Z}\)</span> が存在する。</p>
-<div class="math">$$a + b = r \times n + p + s \times n + q = (r + s) \times n + p + q \equiv p + q \mod n$$</div>
-<p>より代表元のとり方によらないことがわかった。</p>
-<p><span class="math">\(\overline{p}\)</span> に対して <span class="math">\(\overline{-p}\)</span> は加法に関する逆元となる。証明は容易なので省略する。</p>
-<h3 id="cheng fa noque ren">乗法の確認</h3>
-<p><span class="math">\(\overline{p}, \overline{q} \in \mathbb{Z}/n\mathbb{Z}\)</span> に対して、乗法 <span class="math">\(\times\)</span> を</p>
-<div class="math">$$\overline{p} \times \overline{q} = \overline{p \times q}$$</div>
-<p>と定める。このとき乗法が代表元のとり方によらないことを示す。</p>
-<p>任意の <span class="math">\(a \in \overline{p}, b \in \overline{q}\)</span> に対して <span class="math">\(a = r \times n + p, b = s \times n + q\)</span> となる <span class="math">\(r, s \in \mathbb{Z}\)</span> が存在する。</p>
-<div class="math">$$a \times b = (r \times n + p) \times (s \times n + q) = (r \times s \times n + r \times q + s \times p) \times n + p \times q \equiv p \times q \mod n$$</div>
-<p>より代表元のとり方によらないことがわかった。</p>
-<h2 id="matome_1">まとめ</h2>
-<p>ここまでで剰余の同値関係に関して、同値類の間に自然な演算を定義でき、この演算が安全であることを確認した。割り算に関しては次回に取り扱う。</p>
-<p>なお <span class="math">\(\mathbb{Z}/n\mathbb{Z}\)</span> はここで定義した加法と乗法に関して環をなす。</p>
+<p>ここで <span class="math">\(q_{i} \geq 1\)</span> であるので</p>
+<ul>
+<li>(2') <span class="math">\(t     \geq r_{1} + r_{2}\)</span></li>
+<li>(3') <span class="math">\(r_{1} \geq r_{2} + r_{3}\)</span></li>
+<li>(4') <span class="math">\(r_{2} \geq r_{3} + r_{4}\)</span></li>
+<li>(5') <span class="math">\(r_{3} \geq r_{4} + r_{5}\)</span></li>
+<li><span class="math">\(\ldots\)</span></li>
+</ul>
+<p>などを得る。</p>
+<p>(2') と (3') より <span class="math">\(t \geq 2 r_{2} + r_{3}\)</span> 、更に (4') より <span class="math">\(2 r_{2} + r_{3} \geq \left( 2 r_{3} + 2 r_{4} \right) + r_{3}\)</span> を得る。同様に (5') より <span class="math">\(3 r_{3} + 2 r_{4} \geq \left( 3 r_{4} + 3 r_{5} \right) + 2 r_{4}\)</span> など。この手順を続けていくと、係数にフィボナッチ数列が現れていることに気が付く。ここで <span class="math">\(F_{n}\)</span> は <span class="math">\(n\)</span> 番目のフィボナッチ数を表す。</p>
+<div class="math">$$
+t \geq r_{1} + r_{2} \geq 2 r_{2} + r_{3} \geq 3 r_{3} + 2 r_{4} \geq 5 r_{4} + 3 r_{5} \\
+\ldots \geq F_{n - 1} r_{n - 2} + F_{n - 2} r_{n  -1}.
+$$</div>
+<p>余りの列は単調減少で <span class="math">\(r_{n - 1}\)</span> は最後のゼロではない余りであるから</p>
+<div class="math">$$
+r_{n - 2} &gt; r_{n - 1} \geq 1.
+$$</div>
+<p>(上記より <span class="math">\(r_{n - 2} \geq 2\)</span> に注意する)</p>
+<p>従って</p>
+<div class="math">$$
+t \geq F_{n - 1} r_{n - 2} + F_{n - 2} r_{n - 1} \geq 2 F_{n - 1} + F_{n - 2} = \left( F_{n - 1} + F_{n - 2} \right) + F_{n - 1} = F_{n} + F_{n - 1} = F_{n + 1}.
+$$</div>
+<p>を得る。</p>
+<p>ここまでの議論により <span class="math">\(s, t\)</span> の GCD の計算に必要な割り算の回数を <span class="math">\(n\)</span> としたとき <span class="math">\(t\)</span> は <span class="math">\(n + 1\)</span> 番目のフィボナッチ数以上になることが解った。</p>
+<h2 id="ding li">定理</h2>
+<p>二数の GCD を得るのに要する除算の回数は、二数の内の小さい方の数の桁数の 5 倍を超えない。</p>
+<p>この定理は 1844 年に Gabriel Lam&eacute; によって示された。</p>
+<h3 id="zheng ming">証明</h3>
+<p><span class="math">\(F_n\)</span> を <span class="math">\(n\)</span> 番目のフィボナッチ数とする。つまり</p>
+<div class="math">$$
+F_{n + 2} = F_{n + 1} + F_{n}, F_1 = F_2 = 1
+$$</div>
+<p>とする。この時、黄金比を <span class="math">\(\phi = \left( 1 + \sqrt{5} \right) / 2\)</span> と書くと <span class="math">\(\phi\)</span> と <span class="math">\(F_{n}\)</span> に関して次が成り立つ。</p>
+<div class="math">$$
+\phi^{n} = F_{n} \phi + F_{n - 1}
+$$</div>
+<p>このことは <span class="math">\(\phi^{2} = \phi + 1\)</span> の両辺に <span class="math">\(\phi\)</span> を乗じる操作を繰り返すことを考えると解る。詳細は <a href="https://www.fq.math.ca/Scanned/1-3/thoro.pdf">THE GOLDEN RATIO; COMPUTATIONAL CONSIDERATIONS</a> にて。</p>
+<p><span class="math">\(2 &gt; \phi = \left( 1 + \sqrt{5} \right) / 2\)</span> であるので</p>
+<div class="math">$$
+2 F_{n} + F_{n-1} &gt; F_{n} \phi + F_{n - 1}
+$$</div>
+<p>である。左辺は <span class="math">\(F_{n} + F_{n} + F_{n-1} = F_{n} + F_{n + 1} = F_{n + 2}\)</span> であり、右辺は <span class="math">\(\phi^{n} = F_{n} \phi + F_{n - 1}\)</span> であるので</p>
+<div class="math">$$
+F_{n + 2} &gt; \phi^{n}
+$$</div>
+<p>を得る。</p>
+<p><span class="math">\(n\)</span> を <span class="math">\(n - 1\)</span> で置き換えて、先の結果 (<span class="math">\(t \geq F_{n + 1}\)</span>) を使うと</p>
+<div class="math">$$
+t &gt; \phi^{n - 1}
+$$</div>
+<p>を得る。</p>
+<ol>
+<li><span class="math">\(d\)</span> を <span class="math">\(t\)</span> の桁数とすると <span class="math">\(d &gt; \log t\)</span></li>
+<li><span class="math">\(\log t &gt; \left(n - 1 \right) \log \phi\)</span></li>
+<li><span class="math">\(\log \phi &gt; 1 / 5\)</span></li>
+</ol>
+<p>従って <span class="math">\(d &gt; \left(n - 1 \right)/5\)</span> つまり <span class="math">\(n \le 5 d\)</span> を得る。</p>
+<h2 id="can kao wen xian_1">参考文献</h2>
+<ul>
+<li><a href="https://www.fq.math.ca/Scanned/2-2/thoro.pdf">THE EUCLIDEAN ALGORITHM II</a></li>
+<li><a href="https://www.fq.math.ca/Scanned/1-3/thoro.pdf">THE GOLDEN RATIO; COMPUTATIONAL CONSIDERATIONS</a></li>
+</ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -188,28 +229,13 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-08-12T00:00:00+09:00">Aug 12, 2019</time>
-        <h4>剰余計算</h4>
-    <ul class="multi-parts-list">
-            <li >
-            <a href="https://eijit.github.io/20190811.html" title="同値関係">Part 1: 同値関係</a>
-            </li>
-            <li  class="active-part">
-            Part 2: 剰余の同値関係に演算を導入する
-            </li>
-            <li >
-            <a href="https://eijit.github.io/20190813.html" title="剰余の同値関係で乗法の逆元を考える">Part 3: 剰余の同値関係で乗法の逆元を考える</a>
-            </li>
-            <li >
-            <a href="https://eijit.github.io/20190817.html" title="オイラーの定理とフェルマーの小定理">Part 4: オイラーの定理とフェルマーの小定理</a>
-            </li>
-    </ul>
+            <time itemprop="dateCreated" datetime="2022-07-18T00:00:00+09:00">Jul 18, 2022</time>
             <h4>Category</h4>
             <a class="category-link" href="https://eijit.github.io/categories.html#mathematics-ref">Mathematics</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://eijit.github.io/tags#residual-ref">Residual
-                    <span>4</span>
+                <li><a href="https://eijit.github.io/tags#gcd-ref">GCD
+                    <span>1</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

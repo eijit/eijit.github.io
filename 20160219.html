@@ -12,7 +12,7 @@
 <meta name="keywords" content="Code Golf, Programming, " />
 
 <meta property="og:title" content="バイバイマンを数えてみた "/>
-<meta property="og:url" content="/20160219.html" />
+<meta property="og:url" content="https://eijit.github.io/20160219.html" />
 <meta property="og:description" content="バイバイマンを数えように挑戦してみた" />
 <meta property="og:site_name" content="eijit&#39;s blog" />
 <meta property="og:article:author" content="eijit" />
@@ -24,11 +24,11 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/custom.css" media="screen">
         <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
 
 
@@ -44,16 +44,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="/"><span class=site-name>eijit's blog</span></a>
+                    <a class="brand" href="https://eijit.github.io/"><span class=site-name>eijit's blog</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
-                            <li ><a href="">Home</a></li>
-                            <li ><a href="/pages/about.html">About</a></li>
-                            <li ><a href="/pages/favorite-sentences.html">Favorite Sentences</a></li>
-                            <li ><a href="/categories">Categories</a></li>
-                            <li ><a href="/tags">Tags</a></li>
-                            <li ><a href="/archives">Archives</a></li>
-                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            <li ><a href="https://eijit.github.io">Home</a></li>
+                            <li ><a href="https://eijit.github.io/pages/about.html">About</a></li>
+                            <li ><a href="https://eijit.github.io/categories">Categories</a></li>
+                            <li ><a href="https://eijit.github.io/tags">Tags</a></li>
+                            <li ><a href="https://eijit.github.io/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="https://eijit.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +65,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="/20160219.html"> バイバイマンを数えてみた  </a></h1>
+    <h1><a href="https://eijit.github.io/20160219.html"> バイバイマンを数えてみた  </a></h1>
     </header>
 </div>
 
@@ -206,13 +205,13 @@
 <p>と前の世代の一つ小さいサイズの個体数からの移動 (s = 6 は s = 1 に移動したとみなす) と、前の世代のサイズ 8, 6 の分裂からの "繰り上がり" の合計という関係が見えます。</p>
 <h2 id="[85b] zui chu nokodo">[85B] 最初のコード</h2>
 <p>最初はコードゴルフだと気が付かずに 400B 弱のコードを書いて提出してしまったのですがあとから気が付いて短縮してみました。</p>
-<div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+<div class="highlight"><pre><span></span><code><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
- <span class="k">print</span> <span class="nb">sum</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+ <span class="nb">print</span> <span class="nb">sum</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
  <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span><span class="o">+</span><span class="n">c</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
  <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
  <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+=</span><span class="n">c</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 <p>これで 85B でした。要素の格納に配列を使いました。工夫したのは</p>
 <ul>
 <li>[1,0,0,0,0] より [1]+[0]*4 のほうが 2B 少ない</li>
@@ -227,33 +226,33 @@
 <li>ループカウンタを使わないなら exec"コード"*ループ回数 でコードを指定回数繰り返せる</li>
 <li>if などが入れ子にならないなら改行とインデントを省いてセミコロン ';' で代替できる</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span><span class="k">exec</span><span class="s2">"print sum(c);c=c[4:]+c[:4];c[1]+=c[0];c[0]+=c[4];"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span><span class="n">exec</span><span class="s2">"print sum(c);c=c[4:]+c[:4];c[1]+=c[0];c[0]+=c[4];"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>これで 14B 縮みました。ですがまだ足りません。</p>
 <h2 id="[67b] pei lie woyameru">[67B] 配列をやめる</h2>
 <p>配列の要素にアクセスするコストが高いと気が付いたので a, b, c, d, e といった五つの変数で置き換えてみました。</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">exec</span><span class="s2">"print a+b+c+d+e;f=a+d;a=d+e;c=b;d=c;e=d;b=f"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">exec</span><span class="s2">"print a+b+c+d+e;f=a+d;a=d+e;c=b;d=c;e=d;b=f"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>これで更に 4B 縮みました。しかし一時変数 f を使っていて無駄です。</p>
 <h2 id="[64b] yi shi bian shu woshi wazunisuwatsupusuru">[64B] 一時変数を使わずにスワップする</h2>
 <p>コードゴルフの勉強をしたときに一時変数を使わずにスワップする話題があったのを思い出しました。</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span><span class="n">a</span>
-</pre></div>
+</code></pre></div>
 <p>のような構文です。これを適用して</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">exec</span><span class="s2">"print a+b+c+d+e;a,b,c,d,e=d+e,a+e,b,c,d;"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">exec</span><span class="s2">"print a+b+c+d+e;a,b,c,d,e=d+e,a+e,b,c,d;"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>更に 3B 縮みました。これで何とかバッヂ獲得圏内に入ったのですがトップは 50B とまだ絶望的な差があります。</p>
 <h2 id="[62b] gong tong suruji suan womatomeru">[62B] 共通する計算をまとめる</h2>
 <p>ここでコードを眺めていて</p>
-<div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="n">e</span>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="n">e</span>
 <span class="n">a</span><span class="o">=</span><span class="n">d</span><span class="o">+</span><span class="n">e</span>
 <span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">e</span>
-</pre></div>
+</code></pre></div>
 <p>と計算が重複していることに気が付きました。これを利用できないかと考えて</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">exec</span><span class="s2">"a,b,c,d,e=d+e,a+e,b,c,d;print b+c+d+e;"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">exec</span><span class="s2">"a,b,c,d,e=d+e,a+e,b,c,d;print b+c+d+e;"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>と更に 2B 縮みました。ここで</p>
 <ul>
 <li>print と個体数更新の計算の順序を入れ替える</li>
@@ -268,8 +267,8 @@
 <p>という規則があるようでした。理由を考えてみれば当たり前の話でした。バイバイマンの個体数が増えるのは、サイズ 8 と 6 が次の世代になってサイズ 16 と 12 になりサイズ 1, 6 とサイズ 1, 2 に分裂した場合です。その際に増えた個体をサイズ 1 のものとみなせばよいわけです。</p>
 <h2 id="[63b] zhan lue de hou tui">[63B] 戦略的後退</h2>
 <p>早速この解析結果に基づいて実装したところ、残念ながら総和を保持するための変数のために却って 1B 増えてしまいました。</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">exec</span><span class="s2">"s+=a;print s;a,b,c,d,e=d+e,a+e,b,c,d;"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">exec</span><span class="s2">"s+=a;print s;a,b,c,d,e=d+e,a+e,b,c,d;"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>結果が正しいことは確認したのでこの方針をもう少し突き詰めて考えます。</p>
 <h2 id="lin jie liu xiang jian jian hua shi">隣接六項間漸化式</h2>
 <p>利用する変数の削減が必要であると痛感したのでサイズ 1 の個体数だけ都合よく計算できないかと考えました。</p>
@@ -314,8 +313,8 @@ $$</div>
 c_{1, n} = c_{1, n-5} + 2c_{1, n-4}
 $$</div>
 <p>であったので素直にこれを実装して</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">exec</span><span class="s2">"s+=a;print s;a,b,c,d,e=b,c,d,e,a+2*b;"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">exec</span><span class="s2">"s+=a;print s;a,b,c,d,e=b,c,d,e,a+2*b;"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>残念ながら 63B と変わりありません。</p>
 <h2 id="[56b] yatsutoqian jin">[56B] やっと前進</h2>
 <p>漸化式の計算を行っているときに気が付いたのですが、他のサイズの要素数も同じ漸化式で表せて</p>
@@ -331,20 +330,20 @@ $$</div>
 s_{n} = s_{n-5} + 2s_{n-4}
 $$</div>
 <p>とバイバイマンの総和をじかに計算できました。バイバイマンの総数の漸化式に関する初項が 1, 1, 1, 1, 2 であることを合わせて実装すると</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">e</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="k">exec</span><span class="s2">"print a;a,b,c,d,e=b,c,d,e,a+2*b;"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">e</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">exec</span><span class="s2">"print a;a,b,c,d,e=b,c,d,e,a+2*b;"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>ようやく 56B まで縮みました。</p>
 <h2 id="[53b] pei lie zai bi">[53B] 配列再び</h2>
 <p>もうひとひねりが必要なので再び配列を利用します。更に計算するのが高々 100 世代なので rotate shift などもやめました。なりふりを構っている場合ではありません。</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="k">exec</span><span class="s2">"print a[-5];a+=[a[-5]+2*a[-4]];"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="n">exec</span><span class="s2">"print a[-5];a+=[a[-5]+2*a[-4]];"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>これで 53B まできました。これは</p>
 <p>1, 1, 1, 1, 2, 3, 3, 3, 5, 8, ...</p>
 <p>と漸化式に従って次の世代の総数を追加して無制限に成長していく配列で、末尾から -5 の位置を現在の世代の総数として出力しています。</p>
 <h2 id="[51b] zui hou noyi gong fu">[51B] 最後の一工夫</h2>
 <p>53B のコードは配列のインデックスに負の値を使っており '-' だけ損をしています。この配列の順序を逆にして '-' を三つ削り、代わりに += を = と +a に置き換えても差し引きして 2B の短縮になります。</p>
-<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span><span class="k">exec</span><span class="s2">"print a[4];a=[a[4]+2*a[3]]+a;"</span><span class="o">*</span><span class="mi">100</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span><span class="n">exec</span><span class="s2">"print a[4];a=[a[4]+2*a[3]]+a;"</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div>
 <p>これが今回の私の回答でした。</p>
 <h1 id="zui hou ni_1">最後に</h1>
 <p>あともう一バイトを削れないかと</p>
@@ -389,7 +388,8 @@ $$</div>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        fonts: [['STIX', 'TeX']]," +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -425,12 +425,12 @@ $$</div>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2016-02-19T00:00:00+09:00"> 2月 19, 2016</time>
+            <time itemprop="dateCreated" datetime="2016-02-19T00:00:00+09:00">Feb 19, 2016</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#programming-ref">Programming</a>
+            <a class="category-link" href="https://eijit.github.io/categories.html#programming-ref">Programming</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags#code-golf-ref">Code Golf
+                <li><a href="https://eijit.github.io/tags#code-golf-ref">Code Golf
                     <span>1</span>
 </a></li>
             </ul>
@@ -439,8 +439,6 @@ $$</div>
     <i class="fa fa-twitter sidebar-social-links"></i></a>
     <a href="https://github.com/eijit" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-github sidebar-social-links"></i></a>
-    <a href="https://www.facebook.com/eiji.taniguchi.56" title="My Facebook Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-facebook sidebar-social-links"></i></a>
     <a href="https://bookmeter.com/users/13752" title="My Bookmeter Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-bookmeter sidebar-social-links"></i></a>
         </div>

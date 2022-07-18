@@ -12,7 +12,7 @@
 <meta name="keywords" content="AtCoder, ProgrammingContest, Programming, " />
 
 <meta property="og:title" content="AtCoder Beginner Contest 138 参加 "/>
-<meta property="og:url" content="/20190818.html" />
+<meta property="og:url" content="https://eijit.github.io/20190818.html" />
 <meta property="og:description" content="ABCD の四完答" />
 <meta property="og:site_name" content="eijit&#39;s blog" />
 <meta property="og:article:author" content="eijit" />
@@ -24,11 +24,11 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/custom.css" media="screen">
         <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
 
 
@@ -44,16 +44,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="/"><span class=site-name>eijit's blog</span></a>
+                    <a class="brand" href="https://eijit.github.io/"><span class=site-name>eijit's blog</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
-                            <li ><a href="">Home</a></li>
-                            <li ><a href="/pages/about.html">About</a></li>
-                            <li ><a href="/pages/favorite-sentences.html">Favorite Sentences</a></li>
-                            <li ><a href="/categories">Categories</a></li>
-                            <li ><a href="/tags">Tags</a></li>
-                            <li ><a href="/archives">Archives</a></li>
-                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            <li ><a href="https://eijit.github.io">Home</a></li>
+                            <li ><a href="https://eijit.github.io/pages/about.html">About</a></li>
+                            <li ><a href="https://eijit.github.io/categories">Categories</a></li>
+                            <li ><a href="https://eijit.github.io/tags">Tags</a></li>
+                            <li ><a href="https://eijit.github.io/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="https://eijit.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +65,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="/20190818.html"> AtCoder Beginner Contest 138 参加  </a></h1>
+    <h1><a href="https://eijit.github.io/20190818.html"> AtCoder Beginner Contest 138 参加  </a></h1>
     </header>
 </div>
 
@@ -85,28 +84,28 @@
 <p>※ (2019/08/23) 問題 D の回答は正しくなかったので修正した。</p>
 <h2 id="wen ti  a">問題 A</h2>
 <p>入力の <span class="math">\(a\)</span> が <span class="math">\(3200\)</span> 以上かどうかで出力を変える問題なので、そのまま実装した。</p>
-<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">3200</span> <span class="k">else</span> <span class="k">print</span><span class="p">(</span><span class="s1">'red'</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">3200</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'red'</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="wen ti  b">問題 B</h2>
 <p>計算式どおりに計算した。</p>
-<div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="n">A</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
 
 <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
     <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="n">a</span>
 
-<span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">ans</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">ans</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="wen ti  c">問題 C</h2>
 <p>計算の順番によって値にどのような影響が出るかを考えた。要素が 3 つの場合を考えればそれ以上にも適用できる。</p>
 <div class="math">$$s = \frac{\frac{v_i + v_j}{2} + v_k}{2}$$</div>
 <p>とおき、両辺に 4 を掛けて展開すると</p>
 <div class="math">$$4s = v_i + v_j + 2v_k$$</div>
 <p>となり <span class="math">\(s\)</span> への寄与率が最も高いのは <span class="math">\(v_k\)</span> とわかる。従って <span class="math">\(v_1, v_2, \ldots, v_N\)</span> を昇順に並び替えて、前から各具材を鍋に入れていけば良い。</p>
-<div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="n">V</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
 <span class="n">V</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
@@ -114,8 +113,8 @@
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
     <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">ans</span> <span class="o">+</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="wen ti  d">問題 D</h2>
 <p><span class="math">\(p_i, x_i\)</span> をその都度、カウンターに加算していくと、最大で <span class="math">\(NQ\)</span> 回の処理が必要になり、間に合わないだろうと考えた。そのため</p>
 <ul>
@@ -124,62 +123,62 @@
 </ul>
 <p>とすることで処理回数を <span class="math">\(N + Q\)</span> 程度に抑えられるだろうと考えた。しかし PyPy3 (2.4.0) で実装したものの TLE を食らったので C++14 (GCC 5.4.1) に切り替えた。</p>
 <p>※ (2019/08/23) 最初の記事では、根付き木をよく理解しておらず index に暗黙の仮定 (根本ほど index が小さい) をおいていたため、コンテスト後に追加されたテスト (after_contest_15, after_contest_16, after_contest_17) で WA していた。この問題の具体例については <a href="https://qiita.com/c-yan/items/887e2c2f410ecec60650">AtCoder Beginner Contest 138 D - Ki のテストケースがコンテスト後に増えている件について (修正版)</a> が詳しい。</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">AddScore</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;&gt;&amp;</span> <span class="n">C</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span><span class="o">*</span> <span class="n">S</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">visited</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">s</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-    <span class="n">visited</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">j</span> <span class="p">:</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">visited</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">continue</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">S</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">s</span><span class="p">;</span>
-        <span class="n">AddScore</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">visited</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">AddScore</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">*</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">visited</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">visited</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">AddScore</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">visited</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">N</span><span class="p">,</span> <span class="n">Q</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span> <span class="o">&gt;&gt;</span> <span class="n">Q</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">Q</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">map</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;&gt;</span> <span class="n">C</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
-        <span class="n">C</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-        <span class="n">C</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="n">map</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">C</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">C</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">S</span><span class="p">;</span>
-    <span class="n">S</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-    <span class="n">fill</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">S</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">Q</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">long</span> <span class="kt">long</span> <span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">;</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">p</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
-        <span class="n">S</span><span class="p">[</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="w"> </span><span class="n">S</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">S</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">fill</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Q</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">visited</span><span class="p">;</span>
-    <span class="n">visited</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-    <span class="n">fill</span><span class="p">(</span><span class="n">visited</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">visited</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visited</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">visited</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">fill</span><span class="p">(</span><span class="n">visited</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">visited</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="n">AddScore</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">S</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">visited</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
+<span class="w">    </span><span class="n">AddScore</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">visited</span><span class="p">.</span><span class="n">data</span><span class="p">());</span><span class="w"></span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" "</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="wen ti  e">問題 E</h2>
 <p>問題 D の C++ への書き直しに手間取って 20 分くらいしか残っていなかったので十分に考察できず。</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -217,7 +216,8 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        fonts: [['STIX', 'TeX']]," +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -253,15 +253,15 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-08-18T00:00:00+09:00"> 8月 18, 2019</time>
+            <time itemprop="dateCreated" datetime="2019-08-18T00:00:00+09:00">Aug 18, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#programming-ref">Programming</a>
+            <a class="category-link" href="https://eijit.github.io/categories.html#programming-ref">Programming</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags#atcoder-ref">AtCoder
+                <li><a href="https://eijit.github.io/tags#atcoder-ref">AtCoder
                     <span>7</span>
 </a></li>
-                <li><a href="/tags#programmingcontest-ref">ProgrammingContest
+                <li><a href="https://eijit.github.io/tags#programmingcontest-ref">ProgrammingContest
                     <span>7</span>
 </a></li>
             </ul>
@@ -270,8 +270,6 @@
     <i class="fa fa-twitter sidebar-social-links"></i></a>
     <a href="https://github.com/eijit" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-github sidebar-social-links"></i></a>
-    <a href="https://www.facebook.com/eiji.taniguchi.56" title="My Facebook Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-facebook sidebar-social-links"></i></a>
     <a href="https://bookmeter.com/users/13752" title="My Bookmeter Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-bookmeter sidebar-social-links"></i></a>
         </div>

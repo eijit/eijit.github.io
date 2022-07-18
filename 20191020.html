@@ -12,7 +12,7 @@
 <meta name="keywords" content="AtCoder, ProgrammingContest, Programming, " />
 
 <meta property="og:title" content="AtCoder Beginner Contest 143 不参加 "/>
-<meta property="og:url" content="/20191020.html" />
+<meta property="og:url" content="https://eijit.github.io/20191020.html" />
 <meta property="og:description" content="B を O(N) で解いた" />
 <meta property="og:site_name" content="eijit&#39;s blog" />
 <meta property="og:article:author" content="eijit" />
@@ -24,11 +24,11 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://eijit.github.io/theme/css/custom.css" media="screen">
         <link href="https://eijit.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="eijit&#39;s blog - Full Atom Feed" />
 
 
@@ -44,16 +44,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="/"><span class=site-name>eijit's blog</span></a>
+                    <a class="brand" href="https://eijit.github.io/"><span class=site-name>eijit's blog</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
-                            <li ><a href="">Home</a></li>
-                            <li ><a href="/pages/about.html">About</a></li>
-                            <li ><a href="/pages/favorite-sentences.html">Favorite Sentences</a></li>
-                            <li ><a href="/categories">Categories</a></li>
-                            <li ><a href="/tags">Tags</a></li>
-                            <li ><a href="/archives">Archives</a></li>
-                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            <li ><a href="https://eijit.github.io">Home</a></li>
+                            <li ><a href="https://eijit.github.io/pages/about.html">About</a></li>
+                            <li ><a href="https://eijit.github.io/categories">Categories</a></li>
+                            <li ><a href="https://eijit.github.io/tags">Tags</a></li>
+                            <li ><a href="https://eijit.github.io/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="https://eijit.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +65,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="/20191020.html"> AtCoder Beginner Contest 143 不参加  </a></h1>
+    <h1><a href="https://eijit.github.io/20191020.html"> AtCoder Beginner Contest 143 不参加  </a></h1>
     </header>
 </div>
 
@@ -88,49 +87,49 @@
 <p>最内部の <span class="math">\(d_i\)</span> は <span class="math">\(j\)</span> に依存しないので <span class="math">\(j\)</span> に関する和の外に出し</p>
 <div class="math">$$ \sum_{i = 1}^{N - 1} d_i \times \sum_{j = i + 1}^{N} d_j $$</div>
 <p>と書き換えても良い。つまり <span class="math">\(j\)</span> に関する部分和の配列を <span class="math">\(O(N)\)</span> で計算し、その部分和と <span class="math">\(d_i\)</span> の積の総和を求める計算を <span class="math">\(O(N)\)</span> で計算することで、全体として <span class="math">\(O(N)\)</span> で計算できる。</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">N</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">d</span><span class="p">;</span>
-    <span class="n">d</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">d_sum</span><span class="p">;</span>
-    <span class="n">d_sum</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="c1">// d に関する部分和は、最後の要素一つのものから順に計算していく</span>
-    <span class="n">d_sum</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">d_sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">d_sum</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="c1">// d_sum = {</span>
-    <span class="c1">//    d[N - 1]</span>
-    <span class="c1">//    d[N - 1] + d[N - 2]</span>
-    <span class="c1">//    ...</span>
-    <span class="c1">//    d[N - 1] + d[N - 2] + ... + d[1]</span>
-    <span class="c1">// }</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">d</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">d_sum</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">d_sum</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// d に関する部分和は、最後の要素一つのものから順に計算していく</span>
+<span class="w">    </span><span class="n">d_sum</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">d_sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d_sum</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// d_sum = {</span>
+<span class="w">    </span><span class="c1">//    d[N - 1]</span>
+<span class="w">    </span><span class="c1">//    d[N - 1] + d[N - 2]</span>
+<span class="w">    </span><span class="c1">//    ...</span>
+<span class="w">    </span><span class="c1">//    d[N - 1] + d[N - 2] + ... + d[1]</span>
+<span class="w">    </span><span class="c1">// }</span>
 
-    <span class="kt">uint64_t</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">d_sum</span><span class="p">[</span><span class="n">N</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="c1">// ans =</span>
-    <span class="c1">//    d[0] * (d[N - 1] + d[N - 2] + ... + d[1])</span>
-    <span class="c1">//    + ...</span>
-    <span class="c1">//    + d[N - 3] * (d[N - 1] + d[N - 2])</span>
-    <span class="c1">//    + d[N - 2] * d[N - 1]</span>
-    <span class="c1">// }</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d_sum</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ans =</span>
+<span class="w">    </span><span class="c1">//    d[0] * (d[N - 1] + d[N - 2] + ... + d[1])</span>
+<span class="w">    </span><span class="c1">//    + ...</span>
+<span class="w">    </span><span class="c1">//    + d[N - 3] * (d[N - 1] + d[N - 2])</span>
+<span class="w">    </span><span class="c1">//    + d[N - 2] * d[N - 1]</span>
+<span class="w">    </span><span class="c1">// }</span>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -166,7 +165,8 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        fonts: [['STIX', 'TeX']]," +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -202,15 +202,15 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-10-20T00:00:00+09:00">10月 20, 2019</time>
+            <time itemprop="dateCreated" datetime="2019-10-20T00:00:00+09:00">Oct 20, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#programming-ref">Programming</a>
+            <a class="category-link" href="https://eijit.github.io/categories.html#programming-ref">Programming</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags#atcoder-ref">AtCoder
+                <li><a href="https://eijit.github.io/tags#atcoder-ref">AtCoder
                     <span>7</span>
 </a></li>
-                <li><a href="/tags#programmingcontest-ref">ProgrammingContest
+                <li><a href="https://eijit.github.io/tags#programmingcontest-ref">ProgrammingContest
                     <span>7</span>
 </a></li>
             </ul>
@@ -219,8 +219,6 @@
     <i class="fa fa-twitter sidebar-social-links"></i></a>
     <a href="https://github.com/eijit" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-github sidebar-social-links"></i></a>
-    <a href="https://www.facebook.com/eiji.taniguchi.56" title="My Facebook Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-facebook sidebar-social-links"></i></a>
     <a href="https://bookmeter.com/users/13752" title="My Bookmeter Profile" class="sidebar-social-links" target="_blank">
     <i class="fa fa-bookmeter sidebar-social-links"></i></a>
         </div>
