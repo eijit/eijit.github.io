@@ -75,7 +75,7 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#" title="オイラーの定理とフェルマーの小定理">オイラーの定理とフェルマーの小定理</a><ul><li><a class="toc-href" href="#oiranoding li" title="オイラーの定理">オイラーの定理</a><ul><li><a class="toc-href" href="#li  \(n = 15\)" title="例 \(n = 15\)">例 \(n = 15\)</a></li></ul></li><li><a class="toc-href" href="#huerumanoxiao ding li_1" title="フェルマーの小定理">フェルマーの小定理</a></li><li><a class="toc-href" href="#kamaikerunoding li" title="カーマイケルの定理">カーマイケルの定理</a></li><li><a class="toc-href" href="#matome" title="まとめ">まとめ</a></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#" title="オイラーの定理とフェルマーの小定理">オイラーの定理とフェルマーの小定理</a><ul><li><a class="toc-href" href="#oira-noding li" title="オイラーの定理">オイラーの定理</a><ul><li><a class="toc-href" href="#li  \(n = 15\)" title="例 \(n = 15\)">例 \(n = 15\)</a></li></ul></li><li><a class="toc-href" href="#hueruma-noxiao ding li_1" title="フェルマーの小定理">フェルマーの小定理</a></li><li><a class="toc-href" href="#ka-maikerunoding li" title="カーマイケルの定理">カーマイケルの定理</a></li><li><a class="toc-href" href="#matome" title="まとめ">まとめ</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
@@ -88,7 +88,7 @@
 <li><a href="https://eijit.github.io/20190813.html">剰余の同値関係で乗法の逆元を考える</a></li>
 </ul>
 <p>を参照してください。</p>
-<h2 id="oiranoding li">オイラーの定理</h2>
+<h2 id="oira-noding li">オイラーの定理</h2>
 <p><span class="math">\(\mathbb{Z}/n\mathbb{Z}\)</span> で <span class="math">\(n\)</span> と互いに素な <span class="math">\(a \in \mathbb{Z}\)</span> を一つ取る。このとき <span class="math">\(\overline{a}\)</span> に自分自身を繰り返しかけると <span class="math">\(\overline{a}\)</span> は零因子ではないため、いつかは <span class="math">\(\overline{1}\)</span> になる。仮に <span class="math">\(\overline{1}\)</span> にならなかったとすると、べき乗したときの値の候補は有限であるため <span class="math">\(\overline{a}^k = \overline{a}^l\)</span> となる <span class="math">\(k, l \in \mathbb{Z}\)</span> が存在する。仮定より <span class="math">\(\overline{a}\)</span> の逆元が存在するので、両辺に <span class="math">\(\overline{a}^{-1}\)</span> を <span class="math">\(l\)</span> 回かけて <span class="math">\(\overline{a}^{k - l} = \overline{1}\)</span> となる。</p>
 <p>このように <span class="math">\(\overline{a}^k = \overline{1}\)</span> となる <span class="math">\(k\)</span> を <span class="math">\(\overline{a}\)</span> の位数という。</p>
 <p><span class="math">\(1\)</span> 以上 <span class="math">\(n\)</span> 以下の整数で <span class="math">\(n\)</span> と互いに素なものの個数を表す関数</p>
@@ -110,7 +110,7 @@
 <p><span class="math">\(n = 15\)</span> とすると <span class="math">\(15 = 3 \times 5\)</span> より <span class="math">\(\varphi\left(15\right) = (3 - 1)(5 - 1) = 8\)</span> となる。実際に</p>
 <div class="math">$$2^8 = 256 = 17 \times 15 + 1 \equiv 1 \mod(15)$$</div>
 <p>となる。</p>
-<h2 id="huerumanoxiao ding li_1">フェルマーの小定理</h2>
+<h2 id="hueruma-noxiao ding li_1">フェルマーの小定理</h2>
 <p><span class="math">\(n = p\)</span> が素数の場合のオイラーの定理</p>
 <div class="math">$$a^{\varphi\left(p\right)} = a^{p - 1} \equiv 1 \mod(p)$$</div>
 <p>をフェルマーの小定理という。</p>
@@ -122,7 +122,7 @@
 <li><span class="math">\(a ^ {n - 1} \not\equiv 1 \mod(n)\)</span> であれば <span class="math">\(n\)</span> は合成数となり終了</li>
 </ol>
 <p>上記の手順を繰り返しパスし続けることで素数の可能性が高まる。このテストは例えば RSA 暗号で大きな素数を生成する際に利用されることがある。</p>
-<h2 id="kamaikerunoding li">カーマイケルの定理</h2>
+<h2 id="ka-maikerunoding li">カーマイケルの定理</h2>
 <p>フェルマーテストにすべて通過する、つまり <span class="math">\(n\)</span> と互いに素な <span class="math">\(n\)</span> 以下の任意の自然数 <span class="math">\(a\)</span> に対して</p>
 <div class="math">$$a ^ {n - 1} \equiv 1 \mod(n)$$</div>
 <p>となる自然数が存在するとき、この <span class="math">\(n\)</span> をカーマイケル数という。カーマイケル数は <span class="math">\(561, 1105, 1729, \ldots\)</span> と無数に存在することが知られている。</p>
