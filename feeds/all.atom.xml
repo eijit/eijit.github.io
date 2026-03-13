@@ -10,12 +10,12 @@
 &lt;li&gt;アプリリポジトリのタブを選ぶ&lt;/li&gt;
 &lt;li&gt;追加で名前: &lt;code&gt;QPKG Store&lt;/code&gt; URL: &lt;code&gt;https://www.myqnap.org/repo.xml&lt;/code&gt; を入力し追加を選ぶ&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt="QNAP App Center Config" src="https://eijit.github.io/images/20260313_qnap1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="QNAP App Center Config" src="https://eijit.github.io/images/20260313_qnap2.png"/&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;App Center 左側に &lt;code&gt;QPKG Store&lt;/code&gt; が現れているので選ぶ&lt;/li&gt;
 &lt;li&gt;検索に &lt;code&gt;Entware&lt;/code&gt; と入力し出てきた &lt;code&gt;Entware-std&lt;/code&gt; をインストールする&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt="QNAP App Center QPKG Store" src="https://eijit.github.io/images/20260313_qnap1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="QNAP App Center QPKG Store" src="https://eijit.github.io/images/20260313_qnap3.png"/&gt;&lt;/p&gt;
 &lt;p&gt;参考にした記事だと &lt;code&gt;repo.xml&lt;/code&gt; の所在は https://www.qnapclub.eu/en/repo.xml だったけど、このウェブサイトは応答しておらず、調べていたら www.myqnap.org を見つけた。&lt;/p&gt;
 &lt;h2 id="opkg woshi u"&gt;opkg を使う&lt;/h2&gt;
 &lt;p&gt;SSH 接続を有効化するには QNAP Qfinder Pro なら対象の NAS を選んで右クリックし「SSH 接続の設定」を選び「SSH 接続の許可」にチェックを入れて適用する。&lt;/p&gt;
