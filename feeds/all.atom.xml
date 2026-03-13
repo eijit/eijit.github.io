@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="https://eijit.github.io/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>https://eijit.github.io/</id><updated>2022-07-18T00:00:00+09:00</updated><entry><title>ラメの定理</title><link href="https://eijit.github.io/20220718.html" rel="alternate"></link><published>2022-07-18T00:00:00+09:00</published><updated>2022-07-18T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2022-07-18:/20220718.html</id><summary type="html">&lt;p&gt;Lame の定理の証明&lt;/p&gt;</summary><content type="html">&lt;h2 id="hazimeni"&gt;はじめに&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>eijit's blog</title><link href="https://eijit.github.io/" rel="alternate"></link><link href="https://eijit.github.io/feeds/all.atom.xml" rel="self"></link><id>https://eijit.github.io/</id><updated>2026-03-13T00:00:00+09:00</updated><entry><title>QNAP にパッケージマネージャ opkg を入れる</title><link href="https://eijit.github.io/20260313.html" rel="alternate"></link><published>2026-03-13T00:00:00+09:00</published><updated>2026-03-13T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2026-03-13:/20260313.html</id><summary type="html">&lt;p&gt;QNAP に opkg を導入してソフトウェアを追加できるようにする&lt;/p&gt;</summary><content type="html">&lt;h2 id="opkg woinsuto-rusuru"&gt;opkg をインストールする&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;QNAP 管理画面にログインする&lt;/li&gt;
+&lt;li&gt;App Center を開く&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="QNAP home" src="https://eijit.github.io/images/20260313_qnap1.png"/&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;App Center 内で右上の設定 (歯車アイコン) を選ぶ&lt;/li&gt;
+&lt;li&gt;アプリリポジトリのタブを選ぶ&lt;/li&gt;
+&lt;li&gt;追加で名前: &lt;code&gt;QPKG Store&lt;/code&gt; URL: &lt;code&gt;https://www.myqnap.org/repo.xml&lt;/code&gt; を入力し追加を選ぶ&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="QNAP App Center Config" src="https://eijit.github.io/images/20260313_qnap1.png"/&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;App Center 左側に &lt;code&gt;QPKG Store&lt;/code&gt; が現れているので選ぶ&lt;/li&gt;
+&lt;li&gt;検索に &lt;code&gt;Entware&lt;/code&gt; と入力し出てきた &lt;code&gt;Entware-std&lt;/code&gt; をインストールする&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="QNAP App Center QPKG Store" src="https://eijit.github.io/images/20260313_qnap1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;参考にした記事だと &lt;code&gt;repo.xml&lt;/code&gt; の所在は https://www.qnapclub.eu/en/repo.xml だったけど、このウェブサイトは応答しておらず、調べていたら www.myqnap.org を見つけた。&lt;/p&gt;
+&lt;h2 id="opkg woshi u"&gt;opkg を使う&lt;/h2&gt;
+&lt;p&gt;SSH 接続を有効化するには QNAP Qfinder Pro なら対象の NAS を選んで右クリックし「SSH 接続の設定」を選び「SSH 接続の許可」にチェックを入れて適用する。&lt;/p&gt;
+&lt;p&gt;opkg を利用してシステムに変更を加えるには管理者権限が必要になる。 admin アカウントが無効化されている場合は、コントロールパネルを開いて、権限設定、ユーザと辿り、 admin のアクション、アカウントプロファイルの編集と辿り「このアカウントを無効にする」のチェックを外す。その際にデフォルトのパスワードの場合はパスワードの変更を要求されるので、変更しておぼえておく。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ssh&lt;span class="w"&gt; &lt;/span&gt;admin@192.168.x.x
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;で接続する。&lt;/p&gt;
+&lt;p&gt;接続後に Console Management - Main menu という画面が出てくる。ログイン時に毎回出るようなので Q で抜けてよい。&lt;/p&gt;
+&lt;p&gt;Entware-std が正しくインストールされていれば opkg が利用できる。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# パッケージ更新&lt;/span&gt;
+opkg&lt;span class="w"&gt; &lt;/span&gt;update
+
+&lt;span class="c1"&gt;# 一覧&lt;/span&gt;
+opkg&lt;span class="w"&gt; &lt;/span&gt;list
+
+&lt;span class="c1"&gt;# vim のインストール&lt;/span&gt;
+opkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;vim, git, gcc などがあったのでソフトウェアの開発もできる。&lt;/p&gt;
+&lt;p&gt;admin は必要な時だけ有効化しておいて、普段は無効化しておくのがいいだろう。&lt;/p&gt;
+&lt;p&gt;admin とは別のアカウントで ssh 接続すると &lt;code&gt;/home&lt;/code&gt; の下にユーザのホームディレクトリが作られていなくて、接続後に&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Could not chdir to home directory /share/homes/${user}: No such file or directory&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;と表示されている。環境変数の設定などはどうするのがいいかまだよくわかっていない。&lt;/p&gt;
+&lt;p&gt;opkg で入れたアプリは &lt;code&gt;/opt/bin/&lt;/code&gt; にあるので、とりあえずフルパスを指定して実行している。&lt;/p&gt;
+&lt;h2 id="can kao"&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://qiita.com/KEINOS/items/f832ada264257300e4d7"&gt;ARM 系 QNAP に git/php7/golang などをパッケージでコマンドインストールする [Entware で Opkg 編]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://qiita.com/hshimo/items/1f9727775d60124893ad"&gt;QNAPにEntware-stdをインストールする&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Software"></category><category term="QNAP"></category></entry><entry><title>ラメの定理</title><link href="https://eijit.github.io/20220718.html" rel="alternate"></link><published>2022-07-18T00:00:00+09:00</published><updated>2022-07-18T00:00:00+09:00</updated><author><name>eijit</name></author><id>tag:eijit.github.io,2022-07-18:/20220718.html</id><summary type="html">&lt;p&gt;Lame の定理の証明&lt;/p&gt;</summary><content type="html">&lt;h2 id="hazimeni"&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;ラメの定理 (Lame's theorem) はユークリッドの互除法による最大公約数 (GCD, Greatest Common Divisor) の計算に関して、必要なステップ数を評価する定理である。&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.fq.math.ca/Scanned/2-2/thoro.pdf"&gt;THE EUCLIDEAN ALGORITHM II&lt;/a&gt; に定理のステートメントと証明が記載されているので、行間を補いつつ、紹介する。&lt;/p&gt;
 &lt;h2 id="zhun bei"&gt;準備&lt;/h2&gt;
